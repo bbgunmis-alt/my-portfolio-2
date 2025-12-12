@@ -91,10 +91,13 @@
         .hero-right {
             flex: 1;
             padding-left: 50px;
+            padding-right: 50px;
+            /* เพิ่ม Padding ขวาป้องกันตกขอบ */
             padding-bottom: 50px;
             text-align: left;
-            /* ชิดซ้าย */
             z-index: 2;
+            min-width: 0;
+            /* ป้องกัน Flex item ล้น */
         }
 
         h1 {
