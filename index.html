@@ -33,48 +33,148 @@
             padding: 20px;
         }
 
-        /* HERO SECTION (ส่วนหัว) */
+        /* HERO SECTION (ส่วนหัว - ดีไซน์ใหม่) */
         header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 60px 20px;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            background: url('Image/hero-bg.png') no-repeat center center/cover;
+            /* รูปพื้นหลังกราฟิก */
+            color: var(--primary-color);
+            /* เปลี่ยนตัวหนังสือเป็นสีเข้มตามพื้นหลังขาว */
+            padding: 0;
+            /* ลบ padding เดิมออก เพราะจะจัด layout เอง */
+            border-radius: 0 0 0 0;
+            /* ลบความมนออกเพื่อให้เต็มจอหรือดู Modern ขึ้น */
+            box-shadow: none;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            /* เต็มจอ */
+            max-height: 800px;
+            /* ไม่สูงเกินไป */
+            display: flex;
+            align-items: center;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 16px;
-            object-fit: cover;
-            border: 16px solid var(--accent-color);
-            margin-bottom: 15px;
-            background-color: #fff;
-            /* Placeholder สีขาวถ้ายังไม่มีรูป */
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin: 10px 0;
-            font-weight: 600;
+        /* รูปคนด้านซ้าย */
+        .hero-left {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            /* ให้รูปคนอยู่ติดขอบล่าง */
+            justify-content: center;
+            position: relative;
+            z-index: 2;
         }
 
-        header p.subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            color: #e2e8f0;
+        .hero-left img {
+            width: auto;
+            height: 90%;
+            /* ให้รูปคนสูงเกือบเต็มจอ */
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            /* เงาคนเพิ่มมิติ */
         }
 
-        .status-badge {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        /* ข้อความด้านขวา */
+        .hero-right {
+            flex: 1;
+            padding-left: 50px;
+            padding-bottom: 50px;
+            text-align: left;
+            /* ชิดซ้าย */
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 4rem;
+            /* ใหญ่สะใจ */
+            line-height: 1;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            font-weight: 800;
+            /* หนาพิเศษ */
+            letter-spacing: -1px;
+            color: #000;
+        }
+
+        p.subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #444;
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* ปุ่มสีชมพู Magenta ตามแบบ */
+        .btn-hero {
             display: inline-block;
-            margin-top: 10px;
+            background-color: #ff007f;
+            /* Magenta Pink */
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid #ff007f;
+            border-radius: 5px;
+            /* มนนิดเดียวแบบ Modern */
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4);
+        }
+
+        .btn-hero:hover {
+            background-color: transparent;
+            color: #ff007f;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive มือถือ */
+        @media (max-width: 900px) {
+            header {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                /* เอาข้อความขึ้นก่อนรูปในมือถือ หรือรูปก่อนข้อความแล้วแต่ชอบ */
+                justify-content: center;
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            .hero-left {
+                width: 100%;
+                height: 500px;
+                align-items: flex-end;
+            }
+
+            .hero-right {
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            p.subtitle {
+                margin: 0 auto 30px auto;
+            }
         }
 
         /* CONTENT SECTIONS */
@@ -185,14 +285,27 @@
 <body>
 
     <header>
-        <img class="profile-img" src="Image/profile.jpg.JPG" alt="Sirawith Profile">
+        <div class="hero-container">
+            <!-- ด้านซ้าย: รูปคน -->
+            <div class="hero-left">
+                <img src="Image/hero-people.png" alt="Sirawith Kaewsee">
+            </div>
 
-        <h1>สิรวิชญ์ แก้วสี (Sirawith Kaewsee)</h1>
-        <p class="subtitle">
-            Luxury Real Estate Consultant & AI-Driven Marketing Specialist<br>
-            "ผสานศิลปะการขายระดับ High-End เข้ากับเทคโนโลยี AI เพื่อผลลัพธ์ที่วัดผลได้"
-        </p>
-        <div class="status-badge">พร้อมเริ่มงานทันที</div>
+            <!-- ด้านขวา: ข้อความ -->
+            <div class="hero-right">
+                <!-- โลโก้เล็กๆ หัวมุมบน (ถ้าต้องการใส่เพิ่มในอนาคต) -->
+                <!-- <h5>Sirawith.</h5> -->
+
+                <h1>SIRAWITH<br>KEAWSEE</h1>
+                <p class="subtitle">
+                    We help you find the best luxury assets & investment opportunities with AI-driven precision.
+                    <br>
+                    <span style="font-size: 1rem; color: #666; margin-top: 10px; display: block;">(Luxury Real Estate
+                        Consultant & AI Specialist)</span>
+                </p>
+                <a href="#contact" class="btn-hero">READ MORE</a>
+            </div>
+        </div>
     </header>
 
     <div class="container">
