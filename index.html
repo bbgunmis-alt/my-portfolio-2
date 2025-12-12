@@ -255,6 +255,133 @@
             margin-top: 0;
         }
 
+        /* ABOUT SECTION REDESIGN */
+        .about-section-wrapper {
+            background-color: #000;
+            /* Black background for this section area */
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about-header h2 {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 5px;
+            border-left: none;
+            /* Remove previous default border */
+            padding-left: 0;
+            display: inline-block;
+        }
+
+        .about-header p {
+            color: #aaa;
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* The Blue Gradient Card */
+        .about-card {
+            background: url('Image/about-bg.png') no-repeat center center;
+            background-size: cover;
+            /* Ensure specific bg image covers the card */
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            /* Padding managed inside */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+            text-align: left;
+            position: relative;
+        }
+
+        /* Profile Image on the Left */
+        .about-profile-container {
+            flex: 0 0 40%;
+            height: 500px;
+            /* Adjust based on need */
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            /* Align image to bottom */
+            justify-content: center;
+        }
+
+        .about-profile-container img {
+            max-height: 90%;
+            width: auto;
+            object-fit: contain;
+            /* Allow image to overlap slightly if needed, but overflow hidden on card clips it */
+        }
+
+        /* Text Content on the Right */
+        .about-text-content {
+            flex: 0 0 60%;
+            padding: 40px 50px 40px 0;
+            color: white;
+        }
+
+        .about-text-content h3 {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .about-text-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .btn-download-cv {
+            display: inline-block;
+            margin-top: 40px;
+            background-color: #0066ff;
+            color: white;
+            padding: 12px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-download-cv:hover {
+            background-color: #2563eb;
+            box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
+        }
+
+        /* Responsive for About */
+        @media (max-width: 850px) {
+            .about-card {
+                flex-direction: column;
+                padding-bottom: 30px;
+            }
+
+            .about-profile-container {
+                width: 100%;
+                height: 350px;
+                order: 1;
+                /* Image on top? or text on top? Image on top is standard */
+            }
+
+            .about-text-content {
+                width: 100%;
+                padding: 20px 30px;
+                text-align: center;
+                order: 2;
+            }
+        }
+
         /* EXPERIENCE TIMELINE */
         .job-item {
             margin-bottom: 25px;
@@ -380,18 +507,42 @@
 
     <div class="container">
 
-        <section>
-            <h2>เกี่ยวกับฉัน (About Me)</h2>
-            <p>
-                ผมคือที่ปรึกษาที่มีประสบการณ์กว่า 4 ปี ในการดูแลลูกค้ากลุ่ม High Net Worth (HNWI)
-                ทั้งในวงการยานยนต์หรูและอสังหาริมทรัพย์ ควบคู่ไปกับความเชี่ยวชาญด้าน Digital Marketing & AI Automation
-            </p>
-            <p>
-                ผมเชื่อมั่นว่า <strong>"เทคโนโลยีไม่ได้มาแทนที่การบริการ
-                    แต่มาช่วยให้เราดูแลลูกค้าได้ดียิ่งขึ้น"</strong> ผมจึงมุ่งมั่นที่จะนำประสบการณ์ด้านการขาย
-                ผสานเข้ากับนวัตกรรม AI/IoT เพื่อสร้างโซลูชันการอยู่อาศัยที่ตอบโจทย์โลกอนาคตให้กับ Hopscotch ครับ
-            </p>
-        </section>
+        <!-- Custom About Section Wrapper to support full width black background if needed, 
+         but keeping inside container for now? No, need to break out of container or simulate dark bg -->
+    </div> <!-- Close main container temporarily to allow full width background -->
+
+    <div class="about-section-wrapper" id="about">
+        <div class="about-header">
+            <h2>About Me</h2>
+            <p>Luxury Sales Consultant | Investment Advisor | Digital Storyteller</p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-profile-container">
+                <img src="Image/about-profile.png" alt="Sirawith Profile">
+            </div>
+            <div class="about-text-content">
+                <h3>FROM LUXURY REAL ESTATE TO DIGITAL STRATEGY<br>I HELP PEOPLE MAKE SMARTER DECISIONS.</h3>
+                <p>
+                    I blend real estate expertise with digital strategy and automation.
+                </p>
+                <p>
+                    ด้วยประสบการณ์ปิดดีล Luxury Property และวิเคราะห์การลงทุนเชิงลึก
+                    ผมเชื่อในการใช้ข้อมูลที่ชัดเจนเพื่อช่วยให้ลูกค้าตัดสินใจง่ายขึ้น
+                </p>
+                <p>
+                    ปัจจุบันผมพัฒนา LeadFlow Thailand ระบบที่ทำให้ธุรกิจตอบเร็ว
+                    ทำงานเร็ว และไม่พลาดโอกาส ด้วย AI และ Workflow ที่ออกแบบมา
+                    ให้ใช้งานได้จริง งานของผมคือการทำให้เรื่องซับซ้อนกลายเป็นระบบที่เรียบง่ายและ
+                    มีประสิทธิภาพ
+                </p>
+            </div>
+        </div>
+
+        <a href="#" class="btn-download-cv">DOWNLOAD CV</a>
+    </div>
+
+    <div class="container"> <!-- Re-open container for next sections -->
 
         <section>
             <h2>ประสบการณ์ทำงาน (Experience)</h2>
