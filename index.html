@@ -382,7 +382,78 @@
             }
         }
 
-        /* EXPERIENCE TIMELINE */
+        /* SERVICES SECTION */
+        .services-section-wrapper {
+            background: url('Image/services-bg.png') no-repeat center center;
+            background-size: cover;
+            min-height: 800px;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center; /* Center everything by default? Ref looks centered title, text justified/left but central column */
+        }
+
+        .services-header {
+            margin-bottom: 60px;
+        }
+
+        .services-header h2 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 0;
+            color: #fff;
+            border-left: none;
+            padding-left: 0;
+            font-weight: 400; /* Thin/Regular weight for SERVICES */
+        }
+        
+        .services-header h2 strong {
+            font-weight: 700;
+        }
+
+        .service-items-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 700px;
+            margin: 0 auto; /* Center the text column */
+            text-align: left;
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .service-item p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-header h2 {
+                font-size: 2.5rem;
+            }
+            .service-item h3 {
+                font-size: 1.5rem;
+            }
+        }
         .job-item {
             margin-bottom: 25px;
             padding-bottom: 25px;
@@ -542,7 +613,39 @@
         <a href="#" class="btn-download-cv">DOWNLOAD CV</a>
     </div>
 
-    <div class="container"> <!-- Re-open container for next sections -->
+    <div class="services-section-wrapper" id="service">
+        <div class="services-container">
+            <div class="services-header">
+                <h2>SERVICES / <strong>WHAT I DO</strong></h2>
+            </div>
+            
+            <div class="service-items-wrapper">
+                <div class="service-item">
+                    <h3>LUXURY REAL ESTATE ADVISORY</h3>
+                    <p>
+                        ให้คำปรึกษาอสังหาแบบเน้นข้อมูลจริง ทั้ง LTV, rental yield, appraisal gap และ smart-property insights 
+                        เพื่อช่วยลูกค้าตัดสินใจอย่างมั่นใจ ไม่ว่าจะซื้ออยู่เอง หรือลงทุนในสินทรัพย์มูลค่าสูง
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <h3>DIGITAL STRATEGY & STORYTELLING</h3>
+                    <p>
+                        ผสานข้อมูล + ความคิดเชิงกลยุทธ์ เพื่อสร้างคอนเทนต์และแคมเปญที่ชัดเจน เข้าใจง่าย และมีผลลัพธ์ตั้งแต่ TikTok, 
+                        LinkedIn, ถึงเว็บไซต์ส่วนตัว - ทุกอย่างเริ่มจาก "ความชัดเจน"
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <h3>AUTOMATION & SMARTER SYSTEMS<br>(LEADFLOW THAILAND)</h3>
+                    <p>
+                        สร้าง workflow อัตโนมัติสำหรับธุรกิจและครีเอเตอร์ เน้นตอบเร็ว ทำงานเร็ว ไม่พลาดโอกาส 
+                        โดยใช้ Notion, AI และ automation ที่ออกแบบจากประสบการณ์จริงในงานขายและงานบริการ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <section>
             <h2>ประสบการณ์ทำงาน (Experience)</h2>
