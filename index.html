@@ -596,7 +596,114 @@
 
 <body>
 
-    <header>
+        /* EXPERIENCE SECTION */
+        .experience-section-wrapper {
+            background-color: #000;
+            padding: 80px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .experience-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center; /* Center vertical alignment */
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .experience-left {
+            flex: 1;
+            max-width: 700px;
+        }
+
+        .experience-header h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            color: #fff;
+            border-left: none;
+            padding-left: 0;
+            font-weight: 300;
+        }
+
+        .experience-header h2 span {
+            display: block;
+            font-weight: 700;
+        }
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .xp-card {
+            background: linear-gradient(90deg, #60a5fa 0%, #93c5fd 100%); /* Light blue gradient */
+            border-radius: 50px; /* Pill shape */
+            padding: 20px 40px;
+            color: #0f172a; /* Dark text on light bg */
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .xp-card:nth-child(even) {
+             background: linear-gradient(90deg, #93c5fd 0%, #bfdbfe 100%);
+             margin-left: 40px; /* Indent even items slightly for visual interest similar to ref */
+        }
+
+        .xp-card:hover {
+            transform: scale(1.02);
+        }
+
+        .xp-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .xp-card .xp-date {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-left: 10px;
+            font-weight: 400;
+            display: inline-block;
+        }
+
+        .xp-card ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .experience-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .experience-right img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .experience-container {
+                flex-direction: column;
+            }
+            .experience-right {
+                order: -1; /* Image on top? Or bottom. User ref has it right, usually stacks bottom or top. Let's stack bottom for flow */
+                order: 1; 
+                margin-top: 40px;
+            }
+            .xp-card:nth-child(even) {
+                margin-left: 0;
+            }
+        }
         <!-- Navigation -->
         <nav>
             <a href="#">Home</a>
@@ -702,56 +809,64 @@
         </div>
     </div>
 
-    <section>
-        <h2>ประสบการณ์ทำงาน (Experience)</h2>
+    </header> <!-- Fixed closing header tag position -->
 
-        <div class="job-item">
-            <div class="job-title">💻 Digital Marketing Specialist (Freelance)</div>
-            <div class="company-date">เมษายน 2567 - พฤศจิกายน 2568 (ปัจจุบัน)</div>
-            <div class="job-desc">
-                <ul>
-                    <li>ให้คำปรึกษาธุรกิจ SMEs/Startups ในการนำ <strong>AI Automation</strong>
-                        มาใช้ลดขั้นตอนการทำงาน</li>
-                    <li>บริหารจัดการแคมเปญการตลาดแบบ Omni-channel เพื่อสร้างยอดขายและการเติบโต</li>
-                    <li>จัด Workshop อบรมทีมงานลูกค้าเรื่อง Storytelling และ Digital Tools</li>
-                </ul>
+    <div class="experience-section-wrapper" id="portfolio">
+        <div class="experience-container">
+            <div class="experience-left">
+                <div class="experience-header">
+                    <h2>PortFolio<br><span>Professional Experience</span></h2>
+                </div>
+                
+                <div class="experience-list">
+                    <!-- Item 1 -->
+                    <div class="xp-card">
+                        <h3>DIGITAL MARKETING SPECIALIST (FREELANCE) <span class="xp-date">เมษายน 2567 - ปัจจุบัน</span></h3>
+                        <ul>
+                            <li>ให้คำปรึกษาธุรกิจ SMES/STARTUPS ในการนำ AI AUTOMATION มาใช้ลดขั้นตอนการทำงาน</li>
+                            <li>บริหารจัดการแคมเปญการตลาดแบบ OMNI-CHANNEL เพื่อสร้างยอดขายและการเติบโต</li>
+                            <li>จัด WORKSHOP อบรมทีมงานลูกค้าเรื่อง STORYTELLING และ DIGITAL TOOLS</li>
+                        </ul>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="xp-card">
+                        <h3>SALES AND MARKETING EXECUTIVE | ORIGIN PROPERTY <span class="xp-date">มกราคม 2568 - กรกฎาคม 2568</span></h3>
+                        <ul>
+                            <li>บริหารงานขายโครงการ KNIGHTSBRIDGE SPACE (พระราม 4) ทำยอดขายทะลุเป้า 25%</li>
+                            <li>วิเคราะห์ความคุ้มค่าการลงทุน (YIELD & LTV) ให้คำปรึกษาลูกค้าต่างชาติและนักลงทุน</li>
+                            <li>ใช้กลยุทธ์ TIKTOK & LINKEDIN MARKETING เพิ่ม CONVERSION RATE ได้ 22%</li>
+                        </ul>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="xp-card">
+                        <h3>LUXURY SALES CONSULTANT | BMW PERFORMANCE MOTORS <span class="xp-date">ธันวาคม 2564 - ธันวาคม 2567</span></h3>
+                        <ul>
+                            <li>TOP PERFORMER สร้างยอดขายรถยนต์หรู 50+ คัน/ปี (130% ของเป้าหมาย)</li>
+                            <li>บริหารความสัมพันธ์ลูกค้า HNWI รักษาอัตราการซื้อซ้ำ (RETENTION) 15% ต่อปี</li>
+                        </ul>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="xp-card">
+                        <h3>STORE MANAGER | UNIQLO (THAILAND) <span class="xp-date">มิถุนายน 2558 - พฤศจิกายน 2564</span></h3>
+                        <ul>
+                            <li>บริหารทีมงาน 25+ คน และผลักดันยอดขายสาขาให้เติบโต 20% YOY</li>
+                            <li>วางระบบเทรนนิ่งพนักงานใหม่ เพิ่มคะแนนความพึงพอใจลูกค้า (CSI) ได้ 25%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-right">
+                <img src="Image/experience-img.png" alt="Professional Showcase">
             </div>
         </div>
+    </div>
 
-        <div class="job-item">
-            <div class="job-title">🏙️ Sales and Marketing Executive | Origin Property</div>
-            <div class="company-date">มกราคม 2568 - กรกฎาคม 2568</div>
-            <div class="job-desc">
-                <ul>
-                    <li>บริหารงานขายโครงการ KnightsBridge Space (พระราม 4) ทำยอดขายทะลุเป้า 25%</li>
-                    <li>วิเคราะห์ความคุ้มค่าการลงทุน (Yield & LTV) ให้คำปรึกษาลูกค้าต่างชาติและนักลงทุน</li>
-                    <li>ใช้กลยุทธ์ TikTok & LinkedIn Marketing เพิ่ม Conversion Rate ได้ 22%</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="job-item">
-            <div class="job-title">🚗 Luxury Sales Consultant | BMW Performance Motors</div>
-            <div class="company-date">ธันวาคม 2564 - ธันวาคม 2567</div>
-            <div class="job-desc">
-                <ul>
-                    <li>Top Performer สร้างยอดขายรถยนต์หรู 50+ คัน/ปี (130% ของเป้าหมาย)</li>
-                    <li>บริหารความสัมพันธ์ลูกค้า HNWI รักษาอัตราการซื้อซ้ำ (Retention) 15% ต่อปี</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="job-item">
-            <div class="job-title">👔 Store Manager | UNIQLO (Thailand)</div>
-            <div class="company-date">มิถุนายน 2558 - พฤศจิกายน 2564</div>
-            <div class="job-desc">
-                <ul>
-                    <li>บริหารทีมงาน 25+ คน และผลักดันยอดขายสาขาให้เติบโต 20% YoY</li>
-                    <li>วางระบบเทรนนิ่งพนักงานใหม่ เพิ่มคะแนนความพึงพอใจลูกค้า (CSI) ได้ 25%</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- Container for Skill & Contact which will likely need redesign next -->
+    <div class="container" style="background: black; width: 100%; max-width: 100%;"> 
 
     <section>
         <h2>ความเชี่ยวชาญ (Core Expertise)</h2>
