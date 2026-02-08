@@ -4,286 +4,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirawith Kaewsee | Portfolio</title>
-    <meta name="description" content="Sirawith Kaewsee helps people make smarter decisions through data and design.">
+    <title>Sirawith Kaewsee | Enterprise Solutions Architect</title>
+    <meta name="description"
+        content="Enterprise-grade AI & No-Code automation solutions. Sirawith Kaewsee helps businesses scale with smart lead management systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Outfit:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#service">Service</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="#contact">Contact</a>
+    <!-- Navigation with Hamburger Menu -->
+    <nav class="main-nav">
+        <div class="nav-brand">Sirawith.K</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="solutions.html" class="nav-highlight">Solutions</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-
-    <div class="hero-container">
-        <!-- Glass Card Content -->
-        <div class="glass-card">
-            <h1>Scalable AI &<br>No-Code Solutions</h1>
-            <p class="subtitle" style="display: flex; gap: 8px; flex-wrap: wrap;">
-                Leveraging luxury automotive & real estate expertise to build high-volume lead management systems.
-            </p>
-            <a href="solutions.html" class="btn-portfolio">Book a Solution Demo</a>
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="glass-card">
+                <span class="hero-badge">Enterprise Solutions</span>
+                <h1>Scalable AI &<br>No-Code Solutions</h1>
+                <p class="subtitle">
+                    Leveraging luxury automotive & real estate expertise to build high-volume lead management systems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="solutions.html" class="btn-primary">Explore Solutions</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Image/hero-people-new.png" alt="Sirawith Kaewsee - Solutions Architect">
+            </div>
         </div>
-
-        <!-- Hero Image -->
-        <div class="hero-image">
-            <img src="Image/hero-people-new.png" alt="Sirawith Kaewsee in professional attire">
-        </div>
-    </div>
     </header>
 
-    <div class="container">
-
-        <!-- Custom About Section Wrapper to support full width black background if needed, 
-         but keeping inside container for now? No, need to break out of container or simulate dark bg -->
-    </div> <!-- Close main container temporarily to allow full width background -->
-
-    <div class="about-section-wrapper" id="about">
-        <div class="about-header">
-            <h2>About Me</h2>
-            <p>Luxury Sales Consultant | Investment Advisor | Digital Storyteller</p>
-        </div>
-
-        <div class="about-card">
-            <div class="about-profile-container">
-                <img src="Image/about-profile.png" alt="Sirawith Profile">
-            </div>
-            <div class="about-text-content">
-                <h3>FROM LUXURY REAL ESTATE TO DIGITAL STRATEGY<br>I HELP PEOPLE MAKE SMARTER DECISIONS.</h3>
-                <p>
-                    I blend real estate expertise with digital strategy and automation.
-                </p>
-                <p>
-                    ด้วยประสบการณ์ปิดดีล Luxury Property และวิเคราะห์การลงทุนเชิงลึก
-                    ผมเชื่อในการใช้ข้อมูลที่ชัดเจนเพื่อช่วยให้ลูกค้าตัดสินใจง่ายขึ้น
-                </p>
-                <p>
-                    ปัจจุบันผมพัฒนา LeadFlow Thailand ระบบที่ทำให้ธุรกิจตอบเร็ว
-                    ทำงานเร็ว และไม่พลาดโอกาส ด้วย AI และ Workflow ที่ออกแบบมา
-                    ให้ใช้งานได้จริง งานของผมคือการทำให้เรื่องซับซ้อนกลายเป็นระบบที่เรียบง่ายและ
-                    มีประสิทธิภาพ
-                </p>
-            </div>
-        </div>
-
-        <a href="assets/Sirawith_CV_Solution_Architect.pdf" class="btn-download-cv" download>DOWNLOAD CV</a>
-    </div>
-
-    <div class="services-section-wrapper" id="service">
-        <!-- Floating Images -->
-        <img src="Image/services-mic.png" alt="Speaker" class="service-img-left">
-        <img src="Image/services-coffee.png" alt="Discussion" class="service-img-right">
-
-        <div class="services-container">
-            <div class="services-header">
-                <h2>SERVICES / <strong>WHAT I DO</strong></h2>
+    <!-- Solutions Preview Section (Teaser) -->
+    <section class="solutions-preview" id="solutions-preview">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">What We Build</span>
+                <h2>Enterprise Automation Solutions</h2>
+                <p>Scalable systems designed for high-volume operations</p>
             </div>
 
-            <div class="service-items-wrapper">
-                <div class="service-item">
-                    <h3>LUXURY REAL ESTATE ADVISORY</h3>
-                    <p>
-                        ให้คำปรึกษาอสังหาแบบเน้นข้อมูลจริง ทั้ง LTV, rental yield, appraisal gap และ smart-property
-                        insights
-                        เพื่อช่วยลูกค้าตัดสินใจอย่างมั่นใจ ไม่ว่าจะซื้ออยู่เอง หรือลงทุนในสินทรัพย์มูลค่าสูง
-                    </p>
-                </div>
-
-                <div class="service-item">
-                    <h3>DIGITAL STRATEGY & STORYTELLING</h3>
-                    <p>
-                        ผสานข้อมูล + ความคิดเชิงกลยุทธ์ เพื่อสร้างคอนเทนต์และแคมเปญที่ชัดเจน เข้าใจง่าย
-                        และมีผลลัพธ์ตั้งแต่ TikTok,
-                        LinkedIn, ถึงเว็บไซต์ส่วนตัว - ทุกอย่างเริ่มจาก "ความชัดเจน"
-                    </p>
-                </div>
-
-                <div class="service-item">
-                    <h3>AUTOMATION & SMARTER SYSTEMS<br>(LEADFLOW THAILAND)</h3>
-                    <p>
-                        สร้าง workflow อัตโนมัติสำหรับธุรกิจและครีเอเตอร์ เน้นตอบเร็ว ทำงานเร็ว ไม่พลาดโอกาส
-                        โดยใช้ Notion, AI และ automation ที่ออกแบบจากประสบการณ์จริงในงานขายและงานบริการ
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </header> <!-- Fixed closing header tag position -->
-
-    <div class="experience-section-wrapper" id="portfolio">
-        <div class="experience-container">
-            <div class="experience-left">
-                <div class="experience-header">
-                    <h2>PortFolio<br><span>Professional Experience</span></h2>
-                </div>
-
-                <div class="experience-list">
-                    <!-- Item 1 -->
-                    <div class="xp-card">
-                        <h3>DIGITAL MARKETING SPECIALIST (FREELANCE) <span class="xp-date">เมษายน 2567 - ปัจจุบัน</span>
-                        </h3>
-                        <ul>
-                            <li>ให้คำปรึกษาธุรกิจ SMES/STARTUPS ในการนำ AI AUTOMATION มาใช้ลดขั้นตอนการทำงาน</li>
-                            <li>บริหารจัดการแคมเปญการตลาดแบบ OMNI-CHANNEL เพื่อสร้างยอดขายและการเติบโต</li>
-                            <li>จัด WORKSHOP อบรมทีมงานลูกค้าเรื่อง STORYTELLING และ DIGITAL TOOLS</li>
-                        </ul>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="xp-card">
-                        <h3>SALES AND MARKETING EXECUTIVE | ORIGIN PROPERTY <span class="xp-date">มกราคม 2568 - กรกฎาคม
-                                2568</span></h3>
-                        <ul>
-                            <li>บริหารงานขายโครงการ KNIGHTSBRIDGE SPACE (พระราม 4) ทำยอดขายทะลุเป้า 25%</li>
-                            <li>วิเคราะห์ความคุ้มค่าการลงทุน (YIELD & LTV) ให้คำปรึกษาลูกค้าต่างชาติและนักลงทุน</li>
-                            <li>ใช้กลยุทธ์ TIKTOK & LINKEDIN MARKETING เพิ่ม CONVERSION RATE ได้ 22%</li>
-                        </ul>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="xp-card">
-                        <h3>LUXURY SALES CONSULTANT | BMW PERFORMANCE MOTORS <span class="xp-date">ธันวาคม 2564 -
-                                ธันวาคม 2567</span></h3>
-                        <ul>
-                            <li>TOP PERFORMER สร้างยอดขายรถยนต์หรู 50+ คัน/ปี (130% ของเป้าหมาย)</li>
-                            <li>บริหารความสัมพันธ์ลูกค้า HNWI รักษาอัตราการซื้อซ้ำ (RETENTION) 15% ต่อปี</li>
-                        </ul>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="xp-card">
-                        <h3>STORE MANAGER | UNIQLO (THAILAND) <span class="xp-date">มิถุนายน 2558 - พฤศจิกายน
-                                2564</span></h3>
-                        <ul>
-                            <li>บริหารทีมงาน 25+ คน และผลักดันยอดขายสาขาให้เติบโต 20% YOY</li>
-                            <li>วางระบบเทรนนิ่งพนักงานใหม่ เพิ่มคะแนนความพึงพอใจลูกค้า (CSI) ได้ 25%</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="experience-right">
-                <img src="Image/experience-img.png" alt="Professional Showcase">
-            </div>
-        </div>
-    </div>
-
-    <!-- Container for Skill & Contact which will likely need redesign next -->
-    <div class="container" style="background: black; width: 100%; max-width: 100%;">
-
-        <section class="expertise-section" id="expertise">
-            <div class="expertise-header">
-                <h2>ความเชี่ยวชาญ (Core Expertise)</h2>
-            </div>
-
-            <div class="expertise-grid">
-                <!-- Expertise 1 -->
-                <div class="expertise-card">
-                    <span class="expertise-icon">🏛️</span>
-                    <h3>Luxury Real Estate</h3>
-                    <p>Consultative selling & investment analysis for HNWI.</p>
-                </div>
-
-                <!-- Expertise 2 -->
-                <div class="expertise-card">
-                    <span class="expertise-icon">🎯</span>
-                    <h3>Digital Strategy</h3>
-                    <p>Data-driven storytelling & omni-channel marketing.</p>
-                </div>
-
-                <!-- Expertise 3 -->
-                <div class="expertise-card">
-                    <span class="expertise-icon">🤖</span>
-                    <h3>AI & Automation</h3>
-                    <p>Smart business workflows using LeadFlow technology.</p>
-                </div>
-            </div>
-        </section>
-        <section class="activities-section" id="activities">
-            <div class="activities-header">
-                <h2>ภาพกิจกรรมและการทำงาน (Activities)</h2>
-            </div>
-
-            <div class="activities-grid">
-                <!-- Activity 1 -->
-                <div class="activity-card">
-                    <div class="activity-img-box">
-                        <img src="Image/work1.jpg.JPG" alt="บรรยาย Workshop เรื่อง AI Marketing">
-                    </div>
-                    <div class="activity-caption">
-                        <p>บรรยาย Workshop เรื่อง AI Marketing</p>
-                    </div>
-                </div>
-
-                <!-- Activity 2 -->
-                <div class="activity-card">
-                    <div class="activity-img-box">
-                        <img src="Image/work2.jpg.png" alt="ปิดการขายโครงการ Luxury Condo">
-                    </div>
-                    <div class="activity-caption">
-                        <p>ปิดการขายโครงการ Luxury Condo</p>
-                    </div>
-                </div>
-
-                <!-- Activity 3 -->
-                <div class="activity-card">
-                    <div class="activity-img-box">
-                        <img src="Image/work3.jpg.png" alt="ดูแลลูกค้า VIP งาน BMW Event">
-                    </div>
-                    <div class="activity-caption">
-                        <p>ดูแลลูกค้า VIP งาน BMW Event</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Close the temp container from previous steps if it exists, otherwise we just start fresh section -->
-    </div>
-
-    <section class="contact-section-wrapper" id="contact">
-        <div class="contact-glow"></div>
-        <div class="contact-container">
-            <div class="contact-header">
-                <h2>Let's Connect</h2>
-                <p>พร้อมยกระดับธุรกิจและการลงทุนของคุณหรือยัง? ทักมาคุยกันครับ</p>
-            </div>
-
-            <div class="contact-links">
-                <a href="tel:0858508535" class="contact-link-item">
-                    <span class="contact-icon">📞</span>
-                    085-850-8535
+            <div class="bento-grid">
+                <!-- Solution 1 -->
+                <a href="solutions.html#real-estate" class="bento-card bento-blue">
+                    <div class="bento-icon">🏛️</div>
+                    <h3>Real Estate</h3>
+                    <p>Lead Engine & Auto-Routing</p>
+                    <span class="bento-metric">200+ Leads/Day</span>
                 </a>
-                <a href="mailto:sirawith.keawsee@gmail.com" class="contact-link-item">
-                    <span class="contact-icon">📧</span>
-                    sirawith.keawsee@gmail.com
+
+                <!-- Solution 2 -->
+                <a href="solutions.html#automotive" class="bento-card bento-purple">
+                    <div class="bento-icon">🚗</div>
+                    <h3>Automotive</h3>
+                    <p>AI Sales Concierge</p>
+                    <span class="bento-metric">&lt;1min Response</span>
                 </a>
-                <a href="https://line.me/ti/p/~Floy.bmw.th" class="contact-link-item">
-                    <span class="contact-icon">💬</span>
-                    Line: Floy.bmw.th
+
+                <!-- Solution 3 -->
+                <a href="solutions.html#retail" class="bento-card bento-amber">
+                    <div class="bento-icon">🏪</div>
+                    <h3>Retail/Service</h3>
+                    <p>Omni-Channel Sync</p>
+                    <span class="bento-metric">Zero Double-Booking</span>
                 </a>
             </div>
 
-            <a href="solutions.html" class="btn-main-contact">Book a Solution Demo</a>
+            <div class="section-cta">
+                <a href="solutions.html" class="btn-explore">
+                    Explore All Solutions
+                    <span class="arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer class="modern-footer">
-        <div class="footer-logo">Sirawith.K</div>
-        <p>&copy; 2026 Sirawith Kaewsee. All Rights Reserved.</p>
+    <!-- About Section (Condensed) -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="Image/about-profile.png" alt="Sirawith Kaewsee Profile">
+                </div>
+                <div class="about-content">
+                    <span class="section-badge">About Me</span>
+                    <h2>From Luxury Sales to<br>Digital Architecture</h2>
+                    <p class="about-tagline">
+                        Luxury Sales Consultant | Investment Advisor | Solutions Architect
+                    </p>
+                    <p>
+                        ด้วยประสบการณ์ปิดดีล Luxury Property และ BMW Performance Motors
+                        ผมนำความเชี่ยวชาญด้านการขายระดับสูงมาออกแบบระบบ Automation
+                        ที่ช่วยให้ธุรกิจตอบเร็ว ทำงานเร็ว และไม่พลาดโอกาส
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">8+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Luxury Sales/Year</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">System Uptime</span>
+                        </div>
+                    </div>
+                    <a href="assets/Sirawith_CV_Solution_Architect.pdf" class="btn-download" download>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Condensed) -->
+    <section class="experience-section" id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Career Journey</span>
+                <h2>Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Present</span>
+                        <h3>Digital Marketing Specialist (Freelance)</h3>
+                        <p>AI Automation Consulting for SMEs/Startups</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>Sales & Marketing Executive</h3>
+                        <p>Origin Property - Knightsbridge Space (Rama 4)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2024</span>
+                        <h3>Luxury Sales Consultant</h3>
+                        <p>BMW Performance Motors - Top Performer</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2015 - 2021</span>
+                        <h3>Store Manager</h3>
+                        <p>UNIQLO Thailand - Team of 25+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-glow"></div>
+        <div class="section-container">
+            <div class="contact-box">
+                <div class="contact-header">
+                    <h2>Let's Build Together</h2>
+                    <p>พร้อมยกระดับธุรกิจด้วยระบบ Automation ระดับ Enterprise หรือยัง?</p>
+                </div>
+
+                <div class="contact-grid">
+                    <a href="tel:0858508535" class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>085-850-8535</span>
+                    </a>
+                    <a href="mailto:sirawith.keawsee@gmail.com" class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>sirawith.keawsee@gmail.com</span>
+                    </a>
+                    <a href="https://line.me/ti/p/~Floy.bmw.th" class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <span>Line: Floy.bmw.th</span>
+                    </a>
+                </div>
+
+                <a href="solutions.html" class="btn-cta-large">
+                    Request a Solution Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">Sirawith.K</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Sirawith Kaewsee. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- Mobile Menu Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Page transition effect
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 
 </html>
