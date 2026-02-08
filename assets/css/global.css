@@ -582,6 +582,28 @@ body.loaded {
             margin: 0;
 }
 
+.timeline-details {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+}
+
+.timeline-details li {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            padding: 5px 0 5px 20px;
+            position: relative;
+}
+
+.timeline-details li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+}
+
 /* Contact Section */
 .contact-section {
             position: relative;
