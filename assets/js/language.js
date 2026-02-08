@@ -40,7 +40,22 @@ const translations = {
                         // Contact
                         contact_title: "Let's Build Together",
                         contact_subtitle: "Ready to upgrade your business with Enterprise-grade Automation?",
-                        btn_demo: "Request a Solution Demo"
+                        btn_demo: "Request a Solution Demo",
+
+                        // Solutions Page Specific
+                        sol_page_title: "Enterprise Solutions",
+                        sol_page_subtitle: "Scalable Automation Architecture for High-Volume Operations",
+                        sol_realestate_title: "Real Estate Automation",
+                        sol_realestate_desc: "Auto-routing leads from Facebook/TikTok to LINE OA & CRM. <span class='highlight-text'>200+ leads/day</span> with zero manual entry.",
+                        sol_automotive_title: "Automotive AI Sales",
+                        sol_automotive_desc: "Personalized showroom experience. <span class='highlight-text'>Calculates financing & books test drives</span> automatically.",
+                        sol_retail_title: "Retail Omni-Channel",
+                        sol_retail_desc: "Sync inventory across Shopee, Lazada, and POS. <span class='highlight-text'>Real-time stock updates</span> preventing overselling.",
+                        tech_stack_title: "Enterprise Tech Stack",
+                        tech_stack_desc: "Built on globally recognized, secure, and scalable platforms.",
+                        infra_security: "Enterprise-Grade Security",
+                        infra_uptime: "99.9% Application Uptime",
+                        infra_compliance: "PDPA & GDPR Compliant Data Handling"
             },
             th: {
                         // Nav
@@ -83,7 +98,22 @@ const translations = {
                         // Contact
                         contact_title: "เริ่มสร้างระบบของคุณ",
                         contact_subtitle: "พร้อมยกระดับธุรกิจด้วยระบบ Automation ระดับ Enterprise หรือยัง?",
-                        btn_demo: "ขอสาธิตระบบ (Demo)"
+                        btn_demo: "ขอสาธิตระบบ (Demo)",
+
+                        // Solutions Page Specific
+                        sol_page_title: "โซลูชันระดับองค์กร",
+                        sol_page_subtitle: "ระบบอัตโนมัติ LeadFlow TH สำหรับ SME ไทยสู่ระดับ Enterprise",
+                        sol_realestate_title: "ระบบอัตโนมัติอสังหาฯ",
+                        sol_realestate_desc: "ส่งลูกค้าจาก Facebook/TikTok เข้า LINE OA & CRM อัตโนมัติ <span class='highlight-text'>รองรับ 200+ ลีด/วัน</span> โดยไม่ต้องกรอกเอง",
+                        sol_automotive_title: "AI ปิดการขายยานยนต์",
+                        sol_automotive_desc: "ประสบการณ์โชว์รูมส่วนตัว <span class='highlight-text'>คำนวณค่างวด & จอง Test Drive</span> ได้อัตโนมัติ 24 ชม.",
+                        sol_retail_title: "ระบบร้านค้า Omni-Channel",
+                        sol_retail_desc: "เชื่อมสต็อก Shopee, Lazada และหน้าร้าน (POS) <span class='highlight-text'>อัปเดต Real-time</span> ป้องกันการขายสินค้าหมด",
+                        tech_stack_title: "เทคโนโลยีระดับโลก",
+                        tech_stack_desc: "สร้างบนแพลตฟอร์มมาตรฐานสากล มีความปลอดภัยและรองรับการขยายตัวสูง",
+                        infra_security: "ความปลอดภัยระดับ Enterprise",
+                        infra_uptime: "การันตี Uptime 99.9%",
+                        infra_compliance: "รองรับมาตรฐาน PDPA & GDPR"
             }
 };
 

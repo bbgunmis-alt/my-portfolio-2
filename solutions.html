@@ -26,11 +26,39 @@
                         <span></span>
                 </button>
                 <div class="nav-links" id="navLinks">
-                        <a href="index.html">Home</a>
-                        <a href="solutions.html" class="nav-highlight active">Solutions</a>
-                        <a href="index.html#about">About</a>
-                        <a href="index.html#experience">Experience</a>
-                        <a href="index.html#contact">Contact</a>
+                        <a href="index.html" data-lang="nav_home">Home</a>
+                        <a href="solutions.html" class="nav-highlight active" data-lang="nav_solutions">Solutions</a>
+                        <a href="index.html#about" data-lang="nav_about">About</a>
+                        <a href="index.html#contact" data-lang="nav_contact">Contact</a>
+
+                        <!-- Language Toggle Button -->
+                        <div class="lang-switch-wrapper">
+                                <button class="lang-btn active" data-lang-val="en">EN</button>
+                                <button class="lang-btn" data-lang-val="th">TH</button>
+                                <div class="lang-glider"></div>
+                        </div>
+
+                        <!-- Theme Toggle Button -->
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="5"></circle>
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                        </button>
                 </div>
         </nav>
 
@@ -175,101 +203,45 @@
                                                 <div class="arch-node highlight">📊 Smart Routing</div>
                                         </div>
                                 </div>
-                                <div class="arch-arrow">↓</div>
-                                <div class="arch-layer">
-                                        <div class="layer-label">Output Layer</div>
-                                        <div class="layer-items">
-                                                <div class="arch-node">👤 Agent Assignment</div>
-                                                <div class="arch-node">📈 Dashboard</div>
-                                                <div class="arch-node">🔔 Notifications</div>
-                                        </div>
+                                <h2 class="text-center" data-lang="tech_stack_title">Enterprise Tech Stack</h2>
+                                <p class="text-center-sub" data-lang="tech_stack_desc">Built on globally trusted
+                                        platforms</p>
+                                <div class="tech-grid">
+                                        <div class="tech-card">Make.com</div>
+                                        <div class="tech-card">FlutterFlow</div>
+                                        <div class="tech-card">Supabase</div>
+                                        <div class="tech-card">OpenAI API</div>
+                                        <div class="tech-card">Line Messaging API</div>
+                                        <div class="tech-card">Google Cloud</div>
                                 </div>
-                        </div>
-
-                        <!-- Tech Stack -->
-                        <div class="tech-stack-grid">
-                                <h3>Technology Stack</h3>
-                                <div class="tech-logos-compact">
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/n8n.png" alt="n8n">
-                                                <span>n8n</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/make.png" alt="Make">
-                                                <span>Make</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/zapier.png" alt="Zapier">
-                                                <span>Zapier</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/GPT.png" alt="GPT">
-                                                <span>GPT-4.5</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/claude.png" alt="Claude">
-                                                <span>Claude</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/airtable.png" alt="Airtable">
-                                                <span>Airtable</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/notion.png" alt="Notion">
-                                                <span>Notion</span>
-                                        </div>
-                                        <div class="tech-logo-item">
-                                                <img src="Image/logos/hubspot.png" alt="HubSpot">
-                                                <span>HubSpot</span>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
         </section>
 
-        <!-- Infrastructure Section -->
+        <!-- Infrastructure -->
         <section class="infrastructure-section">
                 <div class="infra-container">
-                        <div class="infra-badge">
-                                <span class="infra-icon">🛡️</span>
-                                <span class="infra-text">Enterprise-Grade Infrastructure</span>
+                        <div class="infra-card">
+                                <h3>🔒</h3>
+                                <h4 data-lang="infra_security">Enterprise Security</h4>
+                                <p>End-to-end encryption & API Security</p>
                         </div>
-                        <div class="infra-grid">
-                                <div class="infra-item">
-                                        <span class="infra-number">99.9%</span>
-                                        <span class="infra-label">Uptime SLA</span>
-                                </div>
-                                <div class="infra-item">
-                                        <span class="infra-number">256-bit</span>
-                                        <span class="infra-label">SSL Encryption</span>
-                                </div>
-                                <div class="infra-item">
-                                        <span class="infra-number">GDPR</span>
-                                        <span class="infra-label">Compliant</span>
-                                </div>
-                                <div class="infra-item">
-                                        <span class="infra-number">24/7</span>
-                                        <span class="infra-label">Monitoring</span>
-                                </div>
+                        <div class="infra-card">
+                                <h3>⚡</h3>
+                                <h4 data-lang="infra_uptime">99.9% Uptime</h4>
+                                <p>Redundant server architecture</p>
+                        </div>
+                        <div class="infra-card">
+                                <h3>📋</h3>
+                                <h4 data-lang="infra_compliance">PDPA Compliant</h4>
+                                <p>Data handling according to Thai Law</p>
                         </div>
                 </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- Call to Action -->
         <section class="cta-section">
-                <div class="cta-container">
-                        <h2>Ready to Scale Your Operations?</h2>
-                        <p>Get a personalized scalability audit for your business</p>
-                        <div class="cta-buttons">
-                                <a href="mailto:sirawith.keawsee@gmail.com?subject=Solution%20Demo%20Request"
-                                        class="btn-cta-primary">
-                                        Request a Solution Demo
-                                </a>
-                                <a href="https://line.me/ti/p/~Floy.bmw.th" class="btn-cta-secondary">
-                                        💬 Line: Floy.bmw.th
-                                </a>
-                        </div>
-                </div>
+                <h2 data-lang="contact_title">Ready to Scale?</h2>
+                <p data-lang="contact_subtitle">Let's discuss how automation can grow your business.</p>
+                <a href="index.html#contact" class="btn-primary-glow" data-lang="btn_demo">Contact Me</a>
         </section>
 
         <!-- Footer -->
@@ -277,25 +249,50 @@
                 <div class="footer-content">
                         <div class="footer-brand">Sirawith.K</div>
                         <div class="footer-links">
-                                <a href="index.html">Home</a>
-                                <a href="solutions.html">Solutions</a>
-                                <a href="index.html#about">About</a>
-                                <a href="index.html#contact">Contact</a>
+                                <a href="index.html" data-lang="nav_home">Home</a>
+                                <a href="solutions.html" data-lang="nav_solutions">Solutions</a>
+                                <a href="index.html#about" data-lang="nav_about">About</a>
+                                <a href="index.html#contact" data-lang="nav_contact">Contact</a>
                         </div>
                         <p class="footer-copy">&copy; 2026 Sirawith Kaewsee. All Rights Reserved.</p>
                 </div>
         </footer>
 
-        <!-- Mobile Menu Script -->
+        <!-- JS Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="assets/js/animations.js"></script>
+        <script src="assets/js/language.js"></script>
         <script>
+                // Theme Management Logic (Same as Index)
+                const toggleSwitch = document.querySelector('#theme-toggle');
+                const currentTheme = localStorage.getItem('theme');
+
+                if (currentTheme) {
+                        document.documentElement.setAttribute('data-theme', currentTheme);
+                }
+
+                if (toggleSwitch) {
+                        toggleSwitch.addEventListener('click', function (e) {
+                                const currentTheme = document.documentElement.getAttribute('data-theme');
+                                let targetTheme = 'light';
+                                if (currentTheme === 'light') { targetTheme = 'dark'; }
+                                document.documentElement.setAttribute('data-theme', targetTheme);
+                                localStorage.setItem('theme', targetTheme);
+                        });
+                }
+
+                // Mobile Menu Logic
                 const hamburger = document.getElementById('hamburger');
                 const navLinks = document.getElementById('navLinks');
-
-                hamburger.addEventListener('click', () => {
-                        hamburger.classList.toggle('active');
-                        navLinks.classList.toggle('active');
-                });
-
+                if (hamburger && navLinks) {
+                        hamburger.addEventListener('click', () => {
+                                hamburger.classList.toggle('active');
+                                navLinks.classList.toggle('active');
+                        });
+                }
+        </script>
+        <script>
                 document.querySelectorAll('.nav-links a').forEach(link => {
                         link.addEventListener('click', () => {
                                 hamburger.classList.remove('active');

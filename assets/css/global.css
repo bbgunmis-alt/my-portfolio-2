@@ -1977,3 +1977,122 @@ body.loaded .page-overlay {
     .badg-number { font-size: 1.4rem; }
 }
 
+
+/* --- SOLUTIONS PAGE STYLES --- */
+
+/* Tech Grid (New) */
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    background: rgba(45, 212, 191, 0.05); /* Teal hint */
+    border-color: var(--accent-teal);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+}
+
+/* Infrastructure Grid */
+.infrastructure-section {
+    padding: 80px 20px;
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.infra-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.infra-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease-out;
+}
+
+.infra-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.infra-card h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.infra-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.infra-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.text-center { text-align: center; }
+.text-center-sub { text-align: center; margin-bottom: 40px; color: var(--text-muted); }
+
+
+/* --- SOLUTIONS PAGE METRICS --- */
+.hero-metrics {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 0 1rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.metric-item:last-child {
+    border-right: none;
+}
+
+.metric-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
