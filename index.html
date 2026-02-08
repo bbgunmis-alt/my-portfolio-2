@@ -34,25 +34,77 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Premium Enterprise Style) -->
     <header class="hero-section">
+        <div class="hero-bg-overlay"></div>
         <div class="hero-container">
-            <div class="glass-card">
-                <span class="hero-badge">Enterprise Solutions</span>
-                <h1>Scalable AI &<br>No-Code Solutions</h1>
-                <p class="subtitle">
-                    Leveraging luxury automotive & real estate expertise to build high-volume lead management systems.
+            <div class="hero-content">
+                <div class="hero-typing-wrapper">
+                    <span class="typing-text" id="typing-name"></span><span class="cursor">|</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Enterprise Solutions</span>
+                    <span class="title-line gradient-text">Architect</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up">
+                    LeadFlow TH Founder & Strategic System Designer. Building high-volume, scalable automation for
+                    industry leaders.
                 </p>
-                <div class="hero-buttons">
-                    <a href="solutions.html" class="btn-primary">Explore Solutions</a>
-                    <a href="#contact" class="btn-secondary">Get in Touch</a>
+                <div class="hero-cta-group fade-in-up delay-200">
+                    <a href="solutions.html" class="btn-primary-glow">
+                        View Solution Architecture
+                    </a>
+                    <a href="#contact" class="btn-secondary-outline">
+                        Contact Me
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Image/hero-people-new.png" alt="Sirawith Kaewsee - Solutions Architect">
+
+            <div class="hero-visual fade-in-up delay-400">
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <img src="Image/about-profile.png" alt="Sirawith Kaewsee - Enterprise Architect"
+                            class="profile-img">
+                        <div class="glow-effect"></div>
+                    </div>
+                    <a href="mailto:sirawith.keawsee@gmail.com" class="status-badge">
+                        <span class="status-dot"></span>
+                        Open for Work
+                    </a>
+                </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
     </header>
+
+    <!-- Typing Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textElement = document.getElementById('typing-name');
+            const textToType = "Sirawith Kaewsee";
+            let charIndex = 0;
+
+            function typeWriter() {
+                if (charIndex < textToType.length) {
+                    textElement.innerHTML += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    document.querySelector('.cursor').style.animation = 'blink 1s step-end infinite';
+                }
+            }
+
+            // Start typing after a short delay
+            setTimeout(typeWriter, 500);
+        });
+    </script>
 
     <!-- Solutions Preview Section (Teaser) -->
     <section class="solutions-preview" id="solutions-preview">
