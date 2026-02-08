@@ -1677,3 +1677,124 @@ body.loaded {
     color: var(--text-muted);
 }
 
+
+/* --- AWARD-WINNING ANIMATIONS --- */
+
+/* 1. Custom Cursor */
+.custom-cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-teal);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--accent-teal);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, background 0.3s ease;
+}
+
+body:hover .custom-cursor,
+body:hover .cursor-follower {
+    opacity: 1;
+}
+
+/* Hover state for links/buttons */
+body.hover-target .cursor-follower {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: rgba(45, 212, 191, 0.1);
+    border-color: transparent;
+}
+
+/* 2. Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent-primary));
+    width: 0%;
+    z-index: 10000;
+    transition: width 0.1s ease-out;
+}
+
+/* 3. Hero Animations */
+.hero-visual {
+    perspective: 1000px;
+}
+
+.profile-card {
+    will-change: transform;
+    animation: floatProfile 6s ease-in-out infinite;
+}
+
+@keyframes floatProfile {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+/* 4. Features Animations */
+.feature-card {
+    opacity: 0; /* Hidden initially for GSAP stagger */
+    transform: translateY(30px);
+}
+
+.feature-icon-wrapper svg {
+    overflow: visible;
+}
+
+.feature-icon-wrapper path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 2s ease-out;
+}
+
+.feature-card.in-view .feature-icon-wrapper path {
+    stroke-dashoffset: 0;
+}
+
+/* 5. Navbar Scale on Scroll */
+.main-nav {
+    transition: transform 0.3s ease, background 0.3s ease, padding 0.3s ease;
+}
+
+.main-nav.scrolled {
+    padding: 10px 50px;
+    background: rgba(2, 6, 23, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.main-nav.hidden {
+    transform: translateY(-100%);
+}
+
+/* 6. Page Transition Overlay */
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded .page-overlay {
+    opacity: 0;
+}
+
