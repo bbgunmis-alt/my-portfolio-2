@@ -580,6 +580,178 @@ body.loaded {
             margin: 0;
 }
 
+/* Features Section (Stunning Grid) */
+.features-section {
+            position: relative;
+            padding: 60px 20px 100px;
+            background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+            z-index: 5;
+            margin-top: -50px;
+            /* Slight overlap with Hero for continuity */
+}
+
+.features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+}
+
+.features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+}
+
+.feature-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 30px 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+}
+
+.feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(45, 212, 191, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+}
+
+.feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(45, 212, 191, 0.1);
+            border-color: rgba(45, 212, 191, 0.3);
+            background: rgba(30, 41, 59, 0.6);
+}
+
+.feature-card:hover::before {
+            opacity: 1;
+}
+
+.feature-icon-wrapper {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+}
+
+.feature-icon {
+            width: 48px;
+            height: 48px;
+            color: #2dd4bf;
+            z-index: 2;
+            transition: all 0.4s ease;
+}
+
+.icon-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.4) 0%, transparent 70%);
+            filter: blur(15px);
+            opacity: 0.5;
+            transition: opacity 0.4s ease;
+}
+
+.feature-card:hover .icon-glow {
+            opacity: 1;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.6) 0%, transparent 70%);
+}
+
+.feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: #fff;
+            filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.8));
+            /* Draw animation on hover */
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: drawIcon 1.5s ease forwards;
+}
+
+@keyframes drawIcon {
+            to {
+                        stroke-dashoffset: 0;
+            }
+}
+
+.feature-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin: 0 0 15px 0;
+}
+
+.feature-card p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0;
+}
+
+.highlight-text {
+            color: #2dd4bf;
+            font-weight: 600;
+}
+
+.features-cta {
+            text-align: center;
+            margin-top: 30px;
+}
+
+.btn-text-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+}
+
+.btn-text-link:hover {
+            color: #2dd4bf;
+            transform: translateX(5px);
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+            .features-grid {
+                        grid-template-columns: repeat(2, 1fr);
+            }
+}
+
+@media (max-width: 640px) {
+            .features-grid {
+                        grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                        padding: 25px 20px;
+            }
+
+            .features-section {
+                        padding-top: 40px;
+                        margin-top: 0;
+            }
+}
+
 /* Solutions Preview - Bento Grid */
 .solutions-preview {
             padding: 100px 20px;
