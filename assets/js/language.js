@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Glider Animation
                         if (activeBtn && glider) {
-                                    // Simple glider logic based on assumed flex positioning
                                     if (lang === 'th') {
                                                 glider.style.transform = 'translateX(100%)';
                                     } else {
@@ -192,15 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                     }
                         }
 
-                        // Apply Translations
-                        const elements = document.querySelectorAll('[data-lang]');
-
-                        elements.forEach(el => {
+                        // 1. Apply Dictionary Translations (data-lang)
+                        const dictionaryElements = document.querySelectorAll('[data-lang]');
+                        dictionaryElements.forEach(el => {
                                     const key = el.getAttribute('data-lang');
-                                    if (translations[lang][key]) {
-                                                // Fade out effect
+                                    if (translations[lang] && translations[lang][key]) {
                                                 el.style.opacity = 0;
-
                                                 setTimeout(() => {
                                                             el.innerHTML = translations[lang][key];
                                                             el.style.opacity = 1;
@@ -208,10 +204,30 @@ document.addEventListener('DOMContentLoaded', () => {
                                     }
                         });
 
+                        // 2. Apply Direct Attributes (data-th / data-en) for 100% Coverage
+                        const directElements = document.querySelectorAll('[data-th]');
+                        directElements.forEach(el => {
+                                    const text = lang === 'th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
+                                    if (text) {
+                                                el.style.opacity = 0;
+                                                setTimeout(() => {
+                                                            el.textContent = text;
+                                                            el.style.opacity = 1;
+                                                }, 200);
+                                    }
+                        });
+
+                        // 3. Handle Input Placeholders (data-th-placeholder / data-en-placeholder)
+                        const inputs = document.querySelectorAll('[data-th-placeholder]');
+                        inputs.forEach(el => {
+                                    const phText = lang === 'th' ? el.getAttribute('data-th-placeholder') : el.getAttribute('data-en-placeholder');
+                                    if (phText) {
+                                                el.placeholder = phText;
+                                    }
+                        });
+
                         // Save preference
                         localStorage.setItem('lang', lang);
-
-                        // Optional: Update HTML lang attribute
                         document.documentElement.lang = lang;
             }
 });
