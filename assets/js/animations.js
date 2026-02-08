@@ -1,47 +1,69 @@
+/* --- PREMIUM ANIM.JS (GSAP 3.12.5 + ScrollTrigger) --- */
+
 document.addEventListener('DOMContentLoaded', () => {
 
-            /* --- 1. Custom Cursor Logic --- */
+            /* --- 1. Custom Cursor Logic (Premium Trail) --- */
             const cursor = document.querySelector('.custom-cursor');
             const follower = document.querySelector('.cursor-follower');
 
-            // Check if device is desktop
-            const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+            // Check if device is desktop and prefers motion
+            const prefersMotion = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+            const isPointerFine = window.matchMedia("(pointer: fine)").matches;
 
-            if (isDesktop && cursor && follower) {
+            if (prefersMotion && isPointerFine && cursor && follower) {
+
+                        let mouseX = 0;
+                        let mouseY = 0;
+                        let followerX = 0;
+                        let followerY = 0;
+
+                        // Smooth Follower Loop (RAF)
+                        function animateCursor() {
+                                    // Smooth ease for follower (0.15 = lag factor)
+                                    followerX += (mouseX - followerX) * 0.15;
+                                    followerY += (mouseY - followerY) * 0.15;
+
+                                    // Apply positions
+                                    if (cursor) cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+                                    if (follower) follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
+
+                                    requestAnimationFrame(animateCursor);
+                        }
+
+                        // Start animation loop
+                        animateCursor();
+
+                        // Mouse Move Listener
                         document.addEventListener('mousemove', (e) => {
-                                    gsap.to(cursor, {
-                                                x: e.clientX,
-                                                y: e.clientY,
-                                                duration: 0.1,
-                                                ease: "power2.out"
-                                    });
-                                    gsap.to(follower, {
-                                                x: e.clientX,
-                                                y: e.clientY,
-                                                duration: 0.3,
-                                                ease: "width 0.3s, height 0.3s, opacity 0.3s, border-color 0.3s"
-                                    });
+                                    mouseX = e.clientX;
+                                    mouseY = e.clientY;
                         });
 
                         // Hover Effect on clickable elements
-                        const hoverTargets = document.querySelectorAll('a, button, .feature-card, .btn-primary, .profile-card');
+                        const hoverTargets = document.querySelectorAll('a, button, .feature-card, .btn-primary, .profile-card, .tech-card, .infra-card, .lang-btn, .hamburger');
+
                         hoverTargets.forEach(target => {
                                     target.addEventListener('mouseenter', () => {
-                                                gsap.to(follower, {
-                                                            scale: 2,
-                                                            backgroundColor: 'rgba(45, 212, 191, 0.1)',
-                                                            borderColor: 'transparent',
-                                                            duration: 0.3
-                                                });
+                                                document.body.classList.add('is-hovering');
+                                                // Optional GSAP punch for the dot
+                                                gsap.to(cursor, { scale: 0.5, duration: 0.2, backgroundColor: '#f59e0b' });
                                     });
                                     target.addEventListener('mouseleave', () => {
-                                                gsap.to(follower, {
-                                                            scale: 1,
-                                                            backgroundColor: 'transparent',
-                                                            borderColor: 'var(--accent-teal)',
-                                                            duration: 0.3
-                                                });
+                                                document.body.classList.remove('is-hovering');
+                                                // Reset dot
+                                                gsap.to(cursor, { scale: 1, duration: 0.2, backgroundColor: 'var(--accent-teal)' });
                                     });
+                        });
+
+                        // Click Effect (Pulse)
+                        document.addEventListener('mousedown', () => {
+                                    gsap.to(cursor, { scale: 0.8, duration: 0.1 });
+                                    gsap.to(follower, { scale: 0.9, duration: 0.1 });
+                        });
+
+                        document.addEventListener('mouseup', () => {
+                                    gsap.to(cursor, { scale: 1, duration: 0.2 });
+                                    gsap.to(follower, { scale: 1, duration: 0.2 });
                         });
             }
 
@@ -58,22 +80,22 @@ document.addEventListener('DOMContentLoaded', () => {
             let lastScrollY = window.scrollY;
             const navbar = document.querySelector('.main-nav');
 
-            window.addEventListener('scroll', () => {
-                        if (window.scrollY > 100) {
-                                    navbar.classList.add('scrolled');
-                                    if (window.scrollY > lastScrollY) {
-                                                // Scrolling down -> hide
-                                                navbar.style.transform = 'translateY(-100%)';
+            if (navbar) {
+                        window.addEventListener('scroll', () => {
+                                    if (window.scrollY > 100) {
+                                                navbar.classList.add('scrolled');
+                                                if (window.scrollY > lastScrollY) {
+                                                            navbar.style.transform = 'translateY(-100%)'; // Hide
+                                                } else {
+                                                            navbar.style.transform = 'translateY(0)'; // Show
+                                                }
                                     } else {
-                                                // Scrolling up -> show
+                                                navbar.classList.remove('scrolled');
                                                 navbar.style.transform = 'translateY(0)';
                                     }
-                        } else {
-                                    navbar.classList.remove('scrolled');
-                                    navbar.style.transform = 'translateY(0)';
-                        }
-                        lastScrollY = window.scrollY;
-            });
+                                    lastScrollY = window.scrollY;
+                        });
+            }
 
             /* --- 4. GSAP Animations (ScrollTrigger) --- */
             gsap.registerPlugin(ScrollTrigger);
@@ -89,16 +111,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Profile Parallax Float
-            gsap.to(".profile-card", {
-                        scrollTrigger: {
-                                    trigger: ".hero-section",
-                                    start: "top top",
-                                    end: "bottom top",
-                                    scrub: 1
-                        },
-                        y: 100,
-                        rotation: 3
-            });
+            if (document.querySelector(".profile-card")) {
+                        gsap.to(".profile-card", {
+                                    scrollTrigger: {
+                                                trigger: ".hero-section",
+                                                start: "top top",
+                                                end: "bottom top",
+                                                scrub: 1
+                                    },
+                                    y: 100,
+                                    rotation: 3
+                        });
+            }
+
+            // Solutions Hero Parallax
+            if (document.querySelector(".solutions-hero")) {
+                        gsap.to(".solutions-hero-content", {
+                                    scrollTrigger: {
+                                                trigger: ".solutions-hero",
+                                                start: "top top",
+                                                end: "bottom top",
+                                                scrub: 1
+                                    },
+                                    y: 50,
+                                    opacity: 0.8
+                        });
+            }
 
             // Features Section: Stagger Cards + Draw SVG
             const features = document.querySelectorAll('.feature-card');
@@ -135,31 +173,71 @@ document.addEventListener('DOMContentLoaded', () => {
                                                                         duration: 1.5,
                                                                         ease: "power2.out"
                                                             });
-
-                                                            // Highlight Text Counter Effect (Optional)
-                                                            const highlight = card.querySelector('.highlight-text');
-                                                            gsap.from(highlight, {
-                                                                        scale: 0.8,
-                                                                        color: '#fff',
-                                                                        duration: 0.5,
-                                                                        delay: 0.5
-                                                            });
                                                 }
                                     });
                         }
             });
 
             // Bento Grid Stagger
-            gsap.from(".bento-card", {
-                        scrollTrigger: {
-                                    trigger: ".bento-grid",
-                                    start: "top 80%"
-                        },
-                        opacity: 0,
-                        y: 50,
-                        stagger: 0.1,
-                        duration: 0.8,
-                        ease: "back.out(1.7)"
+            if (document.querySelector(".bento-grid")) {
+                        gsap.from(".bento-card", {
+                                    scrollTrigger: {
+                                                trigger: ".bento-grid",
+                                                start: "top 80%"
+                                    },
+                                    opacity: 0,
+                                    y: 50,
+                                    stagger: 0.1,
+                                    duration: 0.8,
+                                    ease: "back.out(1.7)"
+                        });
+            }
+
+            // Solutions Page: Stagger Animations
+            const solutionBlocks = document.querySelectorAll('.solution-block');
+            solutionBlocks.forEach((block, index) => {
+                        gsap.from(block.children, {
+                                    scrollTrigger: {
+                                                trigger: block,
+                                                start: "top 75%",
+                                                toggleActions: "play none none reverse"
+                                    },
+                                    opacity: 0,
+                                    y: 50,
+                                    stagger: 0.2,
+                                    duration: 0.8,
+                                    ease: "power2.out"
+                        });
             });
+
+            // Tech Grid Stagger
+            if (document.querySelector(".tech-grid")) {
+                        gsap.from(".tech-card", {
+                                    scrollTrigger: {
+                                                trigger: ".tech-grid",
+                                                start: "top 85%"
+                                    },
+                                    opacity: 0,
+                                    scale: 0.8,
+                                    stagger: 0.05,
+                                    duration: 0.5,
+                                    ease: "back.out(1.5)"
+                        });
+            }
+
+            // Infra Cards Stagger
+            if (document.querySelector(".infra-container")) {
+                        gsap.from(".infra-card", {
+                                    scrollTrigger: {
+                                                trigger: ".infra-container",
+                                                start: "top 80%"
+                                    },
+                                    opacity: 0,
+                                    y: 30,
+                                    stagger: 0.15,
+                                    duration: 0.8,
+                                    ease: "power2.out"
+                        });
+            }
 
 });
