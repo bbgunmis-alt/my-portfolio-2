@@ -1849,3 +1849,131 @@ body.loaded .page-overlay {
     transition: opacity 0.2s ease;
 }
 
+
+/* --- ABOUT GALLERY GRID (MAGAZINE STYLE) --- */
+.about-gallery {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 15px;
+    position: relative;
+    max-width: 600px; /* Limit width */
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Main Image */
+.main-img {
+    height: 480px; /* Taller main image */
+}
+
+/* Right Column (Stacked) */
+.gallery-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sub-img {
+    flex: 1; /* Stretch to fill space equally */
+    height: 232px; /* Half of main height approx */
+}
+
+/* Glass Badge on Image */
+.glass-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 2;
+}
+
+/* Floating Experience Badge */
+.experience-badge.floating {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background: var(--btn-primary-bg); /* Use gradient var */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+    z-index: 5;
+    animation: floatBadge 4s ease-in-out infinite;
+    text-align: center;
+    border: 3px solid rgba(255,255,255,0.2);
+}
+
+.badg-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.badge-text {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+    .about-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .gallery-column {
+        flex-direction: row;
+    }
+    
+    .main-img {
+        height: 300px;
+    }
+    
+    .sub-img {
+        height: 150px;
+    }
+    
+    .experience-badge.floating {
+        right: 0;
+        bottom: -20px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .badg-number { font-size: 1.4rem; }
+}
+
