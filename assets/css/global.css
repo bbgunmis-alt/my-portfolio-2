@@ -1,3 +1,107 @@
+/* Global Variables & Theme Config */
+:root {
+            /* Premium Dark Theme (Default) */
+            --bg-primary: #020617;
+            --bg-secondary: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.4);
+            --bg-card-hover: rgba(30, 41, 59, 0.6);
+            --text-primary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-primary: #3b82f6;
+            --accent-secondary: #8b5cf6;
+            --accent-teal: #2dd4bf;
+            --nav-bg: rgba(2, 6, 23, 0.85);
+            --btn-primary-bg: linear-gradient(135deg, #0f766e 0%, #1e3a8a 100%);
+            --gradient-overlay-hero: radial-gradient(circle at 20% 40%, rgba(20, 184, 166, 0.15), transparent 40%),
+                        radial-gradient(circle at 80% 60%, rgba(30, 58, 138, 0.2), transparent 40%),
+                        linear-gradient(180deg, #0f172a 0%, #020617 100%);
+            --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] {
+            /* Premium Light Theme */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.8);
+            --bg-card-hover: #ffffff;
+            --text-primary: #1e293b;
+            --text-muted: #475569;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --accent-primary: #2563eb;
+            --accent-secondary: #7c3aed;
+            --accent-teal: #0d9488;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+            --btn-primary-bg: linear-gradient(135deg, #0d9488 0%, #1d4ed8 100%);
+            --gradient-overlay-hero: radial-gradient(circle at 20% 40%, rgba(13, 148, 136, 0.1), transparent 40%),
+                        radial-gradient(circle at 80% 60%, rgba(37, 99, 235, 0.15), transparent 40%),
+                        linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+            --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Theme Transition */
+body,
+.main-nav,
+.feature-card,
+.profile-card,
+.hero-section {
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        border-color 0.4s ease;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-teal);
+            color: var(--accent-teal);
+            transform: rotate(15deg);
+}
+
+.sun-icon {
+            display: none;
+}
+
+.moon-icon {
+            display: block;
+}
+
+[data-theme="light"] .sun-icon {
+            display: block;
+            animation: rotateIn 0.5s ease;
+}
+
+[data-theme="light"] .moon-icon {
+            display: none;
+}
+
+@keyframes rotateIn {
+            from {
+                        transform: rotate(-90deg) scale(0.5);
+                        opacity: 0;
+            }
+
+            to {
+                        transform: rotate(0) scale(1);
+                        opacity: 1;
+            }
+}
+
 /* Global Styles - Shared across all pages */
 
 /* Page Transitions */
@@ -21,17 +125,17 @@ body.loaded {
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.95);
+            background: var(--nav-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-color);
 }
 
 .nav-brand {
             font-family: 'Outfit', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
-            color: white;
+            color: var(--text-primary);
             letter-spacing: -0.5px;
 }
 
@@ -108,7 +212,7 @@ body.loaded {
             display: block;
             width: 25px;
             height: 2px;
-            background: white;
+            background: var(--text-primary);
             transition: all 0.3s ease;
             border-radius: 2px;
 }
@@ -1361,3 +1465,215 @@ body.loaded {
                         gap: 15px;
             }
 }
+/* --- DARK MODE REFACTOR OVERRIDES --- */
+
+/* Features Section */
+.features-section {
+    background: var(--bg-secondary);
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-card);
+}
+
+.feature-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-teal);
+}
+
+.feature-icon {
+    color: var(--accent-teal);
+}
+
+.feature-card h3 {
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    color: var(--text-muted);
+}
+
+.highlight-text {
+    color: var(--accent-teal);
+}
+
+/* Solutions Preview (Bento) */
+.solutions-preview {
+    background: var(--bg-primary);
+}
+
+.bento-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.bento-card h3 {
+    color: var(--text-primary);
+}
+
+.bento-card p {
+    color: var(--text-muted);
+}
+
+.bento-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+}
+
+/* About Section */
+.about-section {
+    background: var(--bg-secondary);
+}
+
+.about-content h2, .about-stats .stat-number {
+    color: var(--text-primary);
+}
+
+.about-content p, .about-stats .stat-label {
+    color: var(--text-muted);
+}
+
+.btn-download {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+/* Experience Section */
+.experience-section {
+    background: var(--bg-primary);
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+.timeline-content:hover {
+    background: var(--bg-card-hover);
+}
+
+.timeline-content h3 {
+    color: var(--text-primary);
+}
+
+.timeline-content p, .timeline-details li {
+    color: var(--text-muted);
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--bg-secondary);
+}
+
+.contact-box {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+.contact-header h2 {
+    color: var(--text-primary);
+}
+
+.contact-header p {
+    color: var(--text-muted);
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.05); /* Keep slight opacity or use var */
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Footer */
+.main-footer {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-brand {
+    color: var(--text-primary);
+}
+
+.footer-links a {
+    color: var(--text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--accent-primary);
+}
+
+/* Hero Section Updates */
+.hero-section {
+    background: var(--gradient-overlay-hero);
+}
+
+.hero-title {
+    color: var(--text-primary);
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+}
+
+.glass-card {
+    background: var(--bg-card); /* Fallback or override if needed */
+}
+
+/* Solutions Page Overrides if loaded */
+.solutions-hero {
+    background: var(--gradient-overlay-hero);
+}
+
+.solutions-hero-content h1 {
+    color: var(--text-primary);
+}
+
+.hero-metrics .metric-number {
+    color: var(--accent-primary);
+}
+
+.solution-grid-section {
+    background: var(--bg-primary);
+}
+
+.bento-main {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+.bento-main:hover {
+    border-color: var(--accent-primary);
+}
+
+.bento-main h3, .bento-item h3 {
+    color: var(--text-primary);
+}
+
+.bento-main p, .bento-item p {
+    color: var(--text-muted);
+}
+
+.tech-proof-section {
+    background: var(--bg-secondary);
+}
+
+.infrastructure-section {
+    background: var(--bg-primary);
+}
+
+.cta-section {
+    background: var(--bg-secondary);
+}
+
+.cta-section h2 {
+    color: var(--text-primary);
+}
+
+.cta-section p {
+    color: var(--text-muted);
+}
+
