@@ -4,6 +4,7 @@ const translations = {
                         nav_home: "Home",
                         nav_solutions: "Solutions",
                         nav_about: "About",
+                        nav_experience: "Experience",
                         nav_contact: "Contact",
 
                         // Hero
@@ -84,6 +85,7 @@ const translations = {
                         nav_home: "หน้าหลัก",
                         nav_solutions: "บริการ",
                         nav_about: "เกี่ยวกับ",
+                        nav_experience: "ประสบการณ์",
                         nav_contact: "ติดต่อ",
 
                         // Hero
