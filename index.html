@@ -37,6 +37,13 @@
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
 
+            <!-- Language Toggle Button -->
+            <div class="lang-switch-wrapper">
+                <button class="lang-btn active" data-lang-val="en">EN</button>
+                <button class="lang-btn" data-lang-val="th">TH</button>
+                <div class="lang-glider"></div>
+            </div>
+
             <!-- Theme Toggle Button -->
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                 <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -93,18 +100,18 @@
                     <span class="typing-text" id="typing-name"></span><span class="cursor">|</span>
                 </div>
                 <h1 class="hero-title">
-                    <span class="title-line">Enterprise Solutions</span>
-                    <span class="title-line gradient-text">Architect</span>
+                    <span class="title-line" data-lang="hero_title_1">Enterprise Solutions</span>
+                    <span class="title-line gradient-text" data-lang="hero_title_2">Architect</span>
                 </h1>
-                <p class="hero-subtitle fade-in-up">
+                <p class="hero-subtitle fade-in-up" data-lang="hero_subtitle">
                     LeadFlow TH Founder & Strategic System Designer. Building high-volume, scalable automation for
                     industry leaders.
                 </p>
                 <div class="hero-cta-group fade-in-up delay-200">
-                    <a href="solutions.html" class="btn-primary-glow">
+                    <a href="solutions.html" class="btn-primary-glow" data-lang="hero_btn_primary">
                         View Solution Architecture
                     </a>
-                    <a href="#contact" class="btn-secondary-outline">
+                    <a href="#contact" class="btn-secondary-outline" data-lang="hero_btn_secondary">
                         Contact Me
                     </a>
                 </div>
@@ -119,7 +126,7 @@
                     </div>
                     <a href="mailto:sirawith.keawsee@gmail.com" class="status-badge">
                         <span class="status-dot"></span>
-                        Open for Work
+                        <span data-lang="status_working">Open for Work</span>
                     </a>
                 </div>
             </div>
@@ -169,8 +176,9 @@
                         </svg>
                         <div class="icon-glow"></div>
                     </div>
-                    <h3>AI Lead Automation</h3>
-                    <p>No-code systems generating <span class="highlight-text">100+ MQLs/day</span> for Thai SMEs →
+                    <h3 data-lang="feature_1_title">AI Lead Automation</h3>
+                    <p data-lang="feature_1_desc">No-code systems generating <span class="highlight-text">100+
+                            MQLs/day</span> for Thai SMEs →
                         Enterprise scale</p>
                 </div>
 
@@ -184,8 +192,9 @@
                         </svg>
                         <div class="icon-glow"></div>
                     </div>
-                    <h3>Make.com Orchestration</h3>
-                    <p>Multi-platform workflows (FlutterFlow + Gumloop) <span class="highlight-text">99.9% uptime</span>
+                    <h3 data-lang="feature_2_title">Make.com Orchestration</h3>
+                    <p data-lang="feature_2_desc">Multi-platform workflows (FlutterFlow + Gumloop) <span
+                            class="highlight-text">99.9% uptime</span>
                     </p>
                 </div>
 
@@ -199,8 +208,9 @@
                         </svg>
                         <div class="icon-glow"></div>
                     </div>
-                    <h3>Real Estate & Auto CRM</h3>
-                    <p>BMW showroom + ORIGIN Property experience → <span class="highlight-text">Custom AI Scoring</span>
+                    <h3 data-lang="feature_3_title">Real Estate & Auto CRM</h3>
+                    <p data-lang="feature_3_desc">BMW showroom + ORIGIN Property experience → <span
+                            class="highlight-text">Custom AI Scoring</span>
                     </p>
                 </div>
 
@@ -214,14 +224,15 @@
                         </svg>
                         <div class="icon-glow"></div>
                     </div>
-                    <h3>Rapid ROI Systems</h3>
-                    <p>CAC &lt; ฿50/lead, <span class="highlight-text">7-day pilot programs</span>, Enterprise-grade
+                    <h3 data-lang="feature_4_title">Rapid ROI Systems</h3>
+                    <p data-lang="feature_4_desc">CAC &lt; ฿50/lead, <span class="highlight-text">7-day pilot
+                            programs</span>, Enterprise-grade
                         playbooks</p>
                 </div>
             </div>
 
             <div class="features-cta fade-in-up delay-500">
-                <a href="#solutions-preview" class="btn-text-link">See Case Studies →</a>
+                <a href="#solutions-preview" class="btn-text-link" data-lang="feature_cta">See Case Studies →</a>
             </div>
         </div>
     </section>
@@ -230,9 +241,9 @@
     <section class="solutions-preview" id="solutions-preview">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-badge">What We Build</span>
-                <h2>Enterprise Automation Solutions</h2>
-                <p>Scalable systems designed for high-volume operations</p>
+                <span class="section-badge" data-lang="sol_badge">What We Build</span>
+                <h2 data-lang="sol_title">Enterprise Automation Solutions</h2>
+                <p data-lang="sol_subtitle">Scalable systems designed for high-volume operations</p>
             </div>
 
             <div class="bento-grid">
@@ -278,12 +289,12 @@
                     <img src="Image/about-profile.png" alt="Sirawith Kaewsee Profile">
                 </div>
                 <div class="about-content">
-                    <span class="section-badge">About Me</span>
-                    <h2>From Luxury Sales to<br>Digital Architecture</h2>
-                    <p class="about-tagline">
+                    <span class="section-badge" data-lang="about_badge">About Me</span>
+                    <h2 data-lang="about_title">From Luxury Sales to<br>Digital Architecture</h2>
+                    <p class="about-tagline" data-lang="about_tagline">
                         Luxury Sales Consultant | Investment Advisor | Solutions Architect
                     </p>
-                    <p>
+                    <p data-lang="about_desc">
                         ด้วยประสบการณ์ปิดดีล Luxury Property และ BMW Performance Motors
                         ผมนำความเชี่ยวชาญด้านการขายระดับสูงมาออกแบบระบบ Automation
                         ที่ช่วยให้ธุรกิจตอบเร็ว ทำงานเร็ว และไม่พลาดโอกาส
@@ -302,7 +313,8 @@
                             <span class="stat-label">System Uptime</span>
                         </div>
                     </div>
-                    <a href="assets/Sirawith_CV_Solution_Architect.pdf" class="btn-download" download>
+                    <a href="assets/Sirawith_CV_Solution_Architect.pdf" class="btn-download" download
+                        data-lang="btn_cv">
                         Download CV
                     </a>
                 </div>
@@ -375,8 +387,8 @@
         <div class="section-container">
             <div class="contact-box">
                 <div class="contact-header">
-                    <h2>Let's Build Together</h2>
-                    <p>พร้อมยกระดับธุรกิจด้วยระบบ Automation ระดับ Enterprise หรือยัง?</p>
+                    <h2 data-lang="contact_title">Let's Build Together</h2>
+                    <p data-lang="contact_subtitle">พร้อมยกระดับธุรกิจด้วยระบบ Automation ระดับ Enterprise หรือยัง?</p>
                 </div>
 
                 <div class="contact-grid">
@@ -419,6 +431,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/animations.js"></script>
+    <script src="assets/js/language.js"></script>
 
     <!-- Mobile Menu Script -->
     <script>

@@ -1798,3 +1798,54 @@ body.loaded .page-overlay {
     opacity: 0;
 }
 
+
+/* --- LANGUAGE SWITCHER STYLES --- */
+.lang-switch-wrapper {
+    position: relative;
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 4px;
+    margin-left: 15px;
+    width: 90px;
+    justify-content: space-between;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 6px 0;
+    width: 50%;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.lang-btn.active {
+    color: #fff; /* White text on teal bg */
+}
+
+.lang-glider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: var(--accent-teal);
+    border-radius: 20px;
+    z-index: 1;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 10px rgba(45, 212, 191, 0.4);
+}
+
+/* Ensure data-lang transitions smoothly */
+[data-lang] {
+    transition: opacity 0.2s ease;
+}
+

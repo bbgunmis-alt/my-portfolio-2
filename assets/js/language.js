@@ -1,0 +1,143 @@
+const translations = {
+            en: {
+                        // Nav
+                        nav_home: "Home",
+                        nav_solutions: "Solutions",
+                        nav_about: "About",
+                        nav_contact: "Contact",
+
+                        // Hero
+                        hero_title_1: "Enterprise Solutions",
+                        hero_title_2: "Architect",
+                        hero_subtitle: "LeadFlow TH Founder & Strategic System Designer. Building high-volume, scalable automation for industry leaders.",
+                        hero_btn_primary: "View Solution Architecture",
+                        hero_btn_secondary: "Contact Me",
+                        status_working: "Open for Work",
+
+                        // Features
+                        feature_1_title: "AI Lead Automation",
+                        feature_1_desc: "No-code systems generating <span class='highlight-text'>100+ MQLs/day</span> for Thai SMEs → Enterprise scale",
+                        feature_2_title: "Make.com Orchestration",
+                        feature_2_desc: "Multi-platform workflows (FlutterFlow + Gumloop) <span class='highlight-text'>99.9% uptime</span>",
+                        feature_3_title: "Real Estate & Auto CRM",
+                        feature_3_desc: "BMW showroom + ORIGIN Property experience → <span class='highlight-text'>Custom AI Scoring</span>",
+                        feature_4_title: "Rapid ROI Systems",
+                        feature_4_desc: "CAC < ฿50/lead, <span class='highlight-text'>7-day pilot programs</span>, Enterprise-grade playbooks",
+                        feature_cta: "See Case Studies →",
+
+                        // Solutions Preview
+                        sol_badge: "What We Build",
+                        sol_title: "Enterprise Automation Solutions",
+                        sol_subtitle: "Scalable systems designed for high-volume operations",
+
+                        // About
+                        about_badge: "About Me",
+                        about_title: "From Luxury Sales to<br>Digital Architecture",
+                        about_tagline: "Luxury Sales Consultant | Investment Advisor | Solutions Architect",
+                        about_desc: "With 8+ years closing deals at BMW & Origin Property, I don't just write code—I architect systems that sell. Bridging the gap between high-ticket sales psychology and enterprise-grade automation.",
+                        btn_cv: "Download CV",
+
+                        // Contact
+                        contact_title: "Let's Build Together",
+                        contact_subtitle: "Ready to upgrade your business with Enterprise-grade Automation?",
+                        btn_demo: "Request a Solution Demo"
+            },
+            th: {
+                        // Nav
+                        nav_home: "หน้าหลัก",
+                        nav_solutions: "บริการ",
+                        nav_about: "เกี่ยวกับ",
+                        nav_contact: "ติดต่อ",
+
+                        // Hero
+                        hero_title_1: "สถาปนิกโซลูชัน",
+                        hero_title_2: "องค์กร (Enterprise)",
+                        hero_subtitle: "ผู้ก่อตั้ง LeadFlow TH | ออกแบบระบบอัตโนมัติ AI สำหรับ SME ไทย สู่มาตรฐานระดับ Enterprise",
+                        hero_btn_primary: "ดูโครงสร้างระบบ",
+                        hero_btn_secondary: "ติดต่อเรา",
+                        status_working: "พร้อมรับงาน",
+
+                        // Features
+                        feature_1_title: "ระบบอัตโนมัติลูกค้าด้วย AI",
+                        feature_1_desc: "ระบบ No-Code สร้าง <span class='highlight-text'>100+ MQLs/วัน</span> สำหรับ SME ไทย → ขยายสู่ระดับองค์กร",
+                        feature_2_title: "Workflow อัตโนมัติ",
+                        feature_2_desc: "เชื่อมต่อหลายแพลตฟอร์ม (Make.com + Gumloop) <span class='highlight-text'>Uptime 99.9%</span>",
+                        feature_3_title: "CRM อสังหาฯ & ยานยนต์",
+                        feature_3_desc: "จากประสบการณ์ BMW & ORIGIN Property → <span class='highlight-text'>AI Scoring ลูกค้าเป้าหมาย</span>",
+                        feature_4_title: "ROI เร็วด้วยระบบอัจฉริยะ",
+                        feature_4_desc: "ต้นทุนต่อลูกค้า < ฿50, <span class='highlight-text'>เริ่มทดลองใน 7 วัน</span>, Playbooks มาตรฐานองค์กร",
+                        feature_cta: "ดูผลงานจริง →",
+
+                        // Solutions Preview
+                        sol_badge: "บริการของเรา",
+                        sol_title: "โซลูชัน Automation ระดับองค์กร",
+                        sol_subtitle: "ระบบที่ออกแบบมาเพื่อรองรับการขยายตัวและปริมาณข้อมูลมหาศาล",
+
+                        // About
+                        about_badge: "เกี่ยวกับผม",
+                        about_title: "จากยอดนักขาย Luxury<br>สู่สถาปนิกดิจิทัล",
+                        about_tagline: "ที่ปรึกษาการขายรถหรู | นักลงทุนอสังหาฯ | Solutions Architect",
+                        about_desc: "ด้วยประสบการณ์ปิดดีล Luxury Property และ BMW Performance Motors ผมนำความเชี่ยวชาญด้านการขายระดับสูงมาออกแบบระบบ Automation ที่ช่วยให้ธุรกิจตอบเร็ว ทำงานเร็ว และไม่พลาดโอกาส",
+                        btn_cv: "ดาวน์โหลดประวัติ (CV)",
+
+                        // Contact
+                        contact_title: "เริ่มสร้างระบบของคุณ",
+                        contact_subtitle: "พร้อมยกระดับธุรกิจด้วยระบบ Automation ระดับ Enterprise หรือยัง?",
+                        btn_demo: "ขอสาธิตระบบ (Demo)"
+            }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const glider = document.querySelector('.lang-glider');
+
+            // Check saved language
+            const currentLang = localStorage.getItem('lang') || 'en';
+            setLanguage(currentLang);
+
+            langBtns.forEach(btn => {
+                        btn.addEventListener('click', () => {
+                                    const lang = btn.getAttribute('data-lang-val');
+                                    setLanguage(lang);
+                        });
+            });
+
+            function setLanguage(lang) {
+                        // UI Toggle Update
+                        langBtns.forEach(btn => btn.classList.remove('active'));
+                        const activeBtn = document.querySelector(`.lang-btn[data-lang-val="${lang}"]`);
+                        if (activeBtn) activeBtn.classList.add('active');
+
+                        // Glider Animation
+                        if (activeBtn && glider) {
+                                    // Simple glider logic based on assumed flex positioning
+                                    if (lang === 'th') {
+                                                glider.style.transform = 'translateX(100%)';
+                                    } else {
+                                                glider.style.transform = 'translateX(0)';
+                                    }
+                        }
+
+                        // Apply Translations
+                        const elements = document.querySelectorAll('[data-lang]');
+
+                        elements.forEach(el => {
+                                    const key = el.getAttribute('data-lang');
+                                    if (translations[lang][key]) {
+                                                // Fade out effect
+                                                el.style.opacity = 0;
+
+                                                setTimeout(() => {
+                                                            el.innerHTML = translations[lang][key];
+                                                            el.style.opacity = 1;
+                                                }, 200);
+                                    }
+                        });
+
+                        // Save preference
+                        localStorage.setItem('lang', lang);
+
+                        // Optional: Update HTML lang attribute
+                        document.documentElement.lang = lang;
+            }
+});
