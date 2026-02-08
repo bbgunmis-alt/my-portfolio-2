@@ -184,49 +184,79 @@ document.addEventListener('DOMContentLoaded', () => {
                         const activeBtn = document.querySelector(`.lang-btn[data-lang-val="${lang}"]`);
                         if (activeBtn) activeBtn.classList.add('active');
 
-                        // Glider Animation
-                        if (activeBtn && glider) {
-                                    if (lang === 'th') {
-                                                glider.style.transform = 'translateX(100%)';
-                                    } else {
-                                                glider.style.transform = 'translateX(0)';
-                                    }
+                        // GSAP Glider Animation (60fps)
+                        if (glider && typeof gsap !== 'undefined') {
+                                    const xPos = lang === 'th' ? '100%' : '0%';
+                                    gsap.to(glider, {
+                                                x: xPos,
+                                                duration: 0.4,
+                                                ease: "power2.out"
+                                    });
                         }
 
-                        // 1. Apply Dictionary Translations (data-lang)
+                        // Collect all translatable elements
                         const dictionaryElements = document.querySelectorAll('[data-lang]');
-                        dictionaryElements.forEach(el => {
-                                    const key = el.getAttribute('data-lang');
-                                    if (translations[lang] && translations[lang][key]) {
-                                                el.style.opacity = 0;
-                                                setTimeout(() => {
-                                                            el.innerHTML = translations[lang][key];
-                                                            el.style.opacity = 1;
-                                                }, 200);
-                                    }
-                        });
-
-                        // 2. Apply Direct Attributes (data-th / data-en) for 100% Coverage
                         const directElements = document.querySelectorAll('[data-th]');
-                        directElements.forEach(el => {
-                                    const text = lang === 'th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
-                                    if (text) {
-                                                el.style.opacity = 0;
-                                                setTimeout(() => {
-                                                            el.textContent = text;
-                                                            el.style.opacity = 1;
-                                                }, 200);
-                                    }
-                        });
+                        const allElements = [...dictionaryElements, ...directElements];
 
-                        // 3. Handle Input Placeholders (data-th-placeholder / data-en-placeholder)
-                        const inputs = document.querySelectorAll('[data-th-placeholder]');
-                        inputs.forEach(el => {
-                                    const phText = lang === 'th' ? el.getAttribute('data-th-placeholder') : el.getAttribute('data-en-placeholder');
-                                    if (phText) {
-                                                el.placeholder = phText;
-                                    }
-                        });
+                        // GSAP Timeline for Staggered Fade Animation
+                        if (typeof gsap !== 'undefined' && allElements.length > 0) {
+                                    const tl = gsap.timeline();
+
+                                    // Fade Out
+                                    tl.to(allElements, {
+                                                opacity: 0,
+                                                y: -5,
+                                                duration: 0.2,
+                                                stagger: 0.02,
+                                                ease: "power1.in"
+                                    });
+
+                                    // Change Text (after fade out)
+                                    tl.call(() => {
+                                                // Dictionary translations
+                                                dictionaryElements.forEach(el => {
+                                                            const key = el.getAttribute('data-lang');
+                                                            if (translations[lang] && translations[lang][key]) {
+                                                                        el.innerHTML = translations[lang][key];
+                                                            }
+                                                });
+
+                                                // Direct data-th/data-en translations
+                                                directElements.forEach(el => {
+                                                            const text = lang === 'th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
+                                                            if (text) el.textContent = text;
+                                                });
+
+                                                // Handle Placeholders
+                                                const inputs = document.querySelectorAll('[data-th-placeholder]');
+                                                inputs.forEach(el => {
+                                                            const phText = lang === 'th' ? el.getAttribute('data-th-placeholder') : el.getAttribute('data-en-placeholder');
+                                                            if (phText) el.placeholder = phText;
+                                                });
+                                    });
+
+                                    // Fade In
+                                    tl.to(allElements, {
+                                                opacity: 1,
+                                                y: 0,
+                                                duration: 0.3,
+                                                stagger: 0.02,
+                                                ease: "power2.out"
+                                    });
+                        } else {
+                                    // Fallback without GSAP
+                                    dictionaryElements.forEach(el => {
+                                                const key = el.getAttribute('data-lang');
+                                                if (translations[lang] && translations[lang][key]) {
+                                                            el.innerHTML = translations[lang][key];
+                                                }
+                                    });
+                                    directElements.forEach(el => {
+                                                const text = lang === 'th' ? el.getAttribute('data-th') : el.getAttribute('data-en');
+                                                if (text) el.textContent = text;
+                                    });
+                        }
 
                         // Save preference
                         localStorage.setItem('lang', lang);

@@ -2153,3 +2153,64 @@ body.loaded .page-overlay {
     }
 }
 
+
+/* --- PREMIUM LANGUAGE TOGGLE (OVERRIDE) --- */
+.lang-switch-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 4px;
+    width: 140px; /* Increased from 90px */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.lang-switch-wrapper:hover {
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+    border-color: var(--accent-teal);
+}
+
+.lang-btn {
+    width: 50%;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 2;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.05);
+}
+
+.lang-btn.active {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.lang-glider {
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, var(--accent-teal), #2dd4bf);
+    border-radius: 40px;
+    box-shadow: 0 2px 10px rgba(45, 212, 191, 0.5);
+    /* Transition handled by GSAP in JS */
+}
+
+/* Dark Mode Adjustments */
+[data-theme='dark'] .lang-switch-wrapper {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
