@@ -29,12 +29,18 @@
     <link rel="apple-touch-icon" href="Image/hero-profile.png">
     <link rel="icon" type="image/png" href="Image/hero-profile.png">
 
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script">
+    <link rel="preload" href="assets/css/global.css" as="style">
+    <link rel="preload"
+        href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZhrib2Bg-4.woff2"
+        as="font" type="font/woff2" crossorigin>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Outfit:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
@@ -144,7 +150,7 @@
                 <div class="profile-card">
                     <div class="profile-image-wrapper">
                         <img src="Image/about-profile.png" alt="Sirawith Kaewsee - Enterprise Architect"
-                            class="profile-img">
+                            class="profile-img" fetchpriority="high">
                         <div class="glow-effect"></div>
                     </div>
                     <a href="mailto:sirawith.keawsee@gmail.com" class="status-badge">
