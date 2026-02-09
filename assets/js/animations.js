@@ -127,16 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
                                     const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
 
                                     inputs.forEach(input => {
+                                                const parent = input.parentElement;
                                                 if (!input.value.trim()) {
                                                             input.classList.add('error');
+                                                            parent.classList.add('has-error');
                                                             isValid = false;
                                                 } else {
                                                             input.classList.remove('error');
+                                                            parent.classList.remove('has-error');
 
                                                             if (input.type === 'email') {
                                                                         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                                                                         if (!emailRegex.test(input.value)) {
                                                                                     input.classList.add('error');
+                                                                                    parent.classList.add('has-error');
                                                                                     isValid = false;
                                                                         }
                                                             }
@@ -145,24 +149,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     if (isValid) {
                                                 const submitBtn = contactForm.querySelector('.btn-submit');
+                                                const originalText = submitBtn.innerHTML;
                                                 submitBtn.disabled = true;
-                                                submitBtn.innerText = 'Sending...';
 
-                                                // Simulate form submission (Real form would use fetch)
+                                                const currentLang = document.documentElement.lang || 'en';
+                                                submitBtn.innerText = currentLang === 'th' ? 'กำลังส่ง...' : 'Sending...';
+
+                                                // Simulate form submission
                                                 await new Promise(resolve => setTimeout(resolve, 1500));
 
                                                 // Success Animation
                                                 gsap.to(contactForm, {
                                                             opacity: 0,
-                                                            y: -20,
+                                                            scale: 0.95,
                                                             duration: 0.5,
                                                             onComplete: () => {
                                                                         contactForm.style.display = 'none';
+
+                                                                        // Update localized success text
+                                                                        const successTitle = formSuccess.querySelector('h2');
+                                                                        const successPara = formSuccess.querySelector('p');
+
+                                                                        if (currentLang === 'th') {
+                                                                                    if (successTitle) successTitle.innerText = "ส่งสำเร็จ!";
+                                                                                    if (successPara) successPara.innerText = "ขอบคุณที่ติดต่อผม จะรีบตอบกลับโดยเร็วที่สุดครับ";
+                                                                        }
+
                                                                         formSuccess.classList.add('show');
 
                                                                         // GSAP Success Reveal
                                                                         gsap.from(".success-checkmark", { scale: 0, duration: 0.6, ease: "back.out(1.7)" });
-                                                                        gsap.from(".success-text", { opacity: 0, y: 20, duration: 0.5, delay: 0.3 });
+                                                                        gsap.from(".success-text-content > *", { opacity: 0, y: 20, duration: 0.5, stagger: 0.2, delay: 0.3 });
                                                             }
                                                 });
                                     }
