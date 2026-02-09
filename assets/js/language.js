@@ -4,6 +4,7 @@ const translations = {
                         nav_home: "Home",
                         nav_solutions: "Solutions",
                         nav_about: "About",
+                        nav_projects: "Projects",
                         nav_experience: "Experience",
                         nav_contact: "Contact",
 
@@ -25,6 +26,14 @@ const translations = {
                         feature_4_title: "Rapid ROI Systems",
                         feature_4_desc: "CAC < ฿50/lead, <span class='highlight-text'>7-day pilot programs</span>, Enterprise-grade playbooks",
                         feature_cta: "See Case Studies →",
+
+                        // Projects
+                        projects_badge: "Case Studies",
+                        projects_title: "Recent LeadFlow Success",
+                        projects_subtitle: "Real results for industry-leading partners",
+                        p1_title: "Luxury CRM Automation",
+                        p2_title: "Lead Routing Engine",
+                        p3_title: "Smart Operations Hub",
 
                         // Solutions Preview
                         sol_badge: "What We Build",
@@ -92,6 +101,7 @@ const translations = {
                         nav_home: "หน้าหลัก",
                         nav_solutions: "บริการ",
                         nav_about: "เกี่ยวกับ",
+                        nav_projects: "ผลงาน",
                         nav_experience: "ประสบการณ์",
                         nav_contact: "ติดต่อ",
 
@@ -113,6 +123,14 @@ const translations = {
                         feature_4_title: "ROI เร็วด้วยระบบอัจฉริยะ",
                         feature_4_desc: "ต้นทุนต่อลูกค้า < ฿50, <span class='highlight-text'>เริ่มทดลองใน 7 วัน</span>, Playbooks มาตรฐานองค์กร",
                         feature_cta: "ดูผลงานจริง →",
+
+                        // Projects
+                        projects_badge: "ผลงานล่าสุด",
+                        projects_title: "ความสำเร็จของ LeadFlow",
+                        projects_subtitle: "ผลลัพธ์จริงจากพาร์ทเนอร์ระดับแนวหน้า",
+                        p1_title: "ระบบ CRM ยานยนต์หรู",
+                        p2_title: "ระบบคัดกรองลีดอัจฉริยะ",
+                        p3_title: "ศูนย์รวมปฏิบัติการอัจฉริยะ",
 
                         // Solutions Preview
                         sol_badge: "บริการของเรา",
