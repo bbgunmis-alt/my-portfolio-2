@@ -60,7 +60,7 @@
         </button>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active" data-lang="nav_home">Home</a>
-            <a href="solutions.html" class="nav-highlight" data-lang="nav_solutions">Solutions</a>
+            <a href="#solutions" class="nav-highlight" data-lang="nav_solutions">Solutions</a>
             <a href="#about" data-lang="nav_about">About</a>
             <a href="#projects" data-lang="nav_projects">Projects</a>
             <a href="#experience" data-lang="nav_experience">Experience</a>
@@ -141,7 +141,7 @@
                     industry leaders.
                 </p>
                 <div class="hero-cta-group fade-in-up delay-200">
-                    <a href="solutions.html" class="btn-primary-glow" data-lang="hero_btn_primary">
+                    <a href="#solutions" class="btn-primary-glow" data-lang="hero_btn_primary">
                         View Solution Architecture
                     </a>
                     <a href="#contact" class="btn-secondary-outline" data-lang="hero_btn_secondary">
@@ -265,52 +265,153 @@
             </div>
 
             <div class="features-cta fade-in-up delay-500">
-                <a href="#solutions-preview" class="btn-text-link" data-lang="feature_cta">See Case Studies →</a>
+                <a href="#solutions" class="btn-text-link" data-lang="feature_cta">See Case Studies →</a>
             </div>
         </div>
     </section>
 
 
-    <!-- Solutions Preview Section (Teaser) -->
-    <section class="solutions-preview" id="solutions-preview">
+    <!-- Solutions Section (Full Bento Layout) -->
+    <section class="solution-grid-section" id="solutions">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-badge" data-lang="sol_badge">What We Build</span>
-                <h2 data-lang="sol_title">Enterprise Automation Solutions</h2>
-                <p data-lang="sol_subtitle">Scalable systems designed for high-volume operations</p>
+                <span class="section-badge" data-lang="sol_badge">Our Solutions</span>
+                <h2 data-lang="sol_title">Industry-Specific Automation</h2>
+                <p data-lang="sol_subtitle">Scalable AI & No-Code Solutions designed for high-volume enterprise
+                    operations</p>
             </div>
 
-            <div class="bento-grid">
-                <!-- Solution 1 -->
-                <a href="solutions.html#real-estate" class="bento-card bento-blue">
-                    <div class="bento-icon">🏛️</div>
-                    <h3>Real Estate</h3>
-                    <p>Lead Engine & Auto-Routing</p>
-                    <span class="bento-metric">200+ Leads/Day</span>
-                </a>
+            <div class="solution-bento">
+                <!-- Main Solution - Real Estate -->
+                <div class="bento-main" id="real-estate-detail">
+                    <div class="bento-content">
+                        <div class="bento-badge">Real Estate Chain</div>
+                        <h3 data-lang="sol_realestate_title">Lead Engine & Auto-Routing</h3>
+                        <p data-lang="sol_realestate_desc">ระบบจัดการลีดอัตโนมัติสำหรับอสังหาริมทรัพย์หลายสาขา
+                            รองรับการกระจายลีดไปยังตัวแทนขายที่เหมาะสมที่สุด</p>
+                        <div class="bento-stats">
+                            <div class="bento-stat">
+                                <span class="stat-value">200+</span>
+                                <span class="stat-label">Leads/Day</span>
+                            </div>
+                            <div class="bento-stat">
+                                <span class="stat-value">+1.25%</span>
+                                <span class="stat-label">Conversion</span>
+                            </div>
+                            <div class="bento-stat">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Branches</span>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li>AI-powered lead scoring</li>
+                            <li>Real-time branch dashboard</li>
+                            <li>Automated follow-up sequences</li>
+                            <li>CRM integration</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <!-- Solution 2 -->
-                <a href="solutions.html#automotive" class="bento-card bento-purple">
+                <!-- Solution 2 - Automotive -->
+                <div class="bento-item bento-purple" id="automotive-detail">
                     <div class="bento-icon">🚗</div>
-                    <h3>Automotive</h3>
-                    <p>AI Sales Concierge</p>
-                    <span class="bento-metric">&lt;1min Response</span>
-                </a>
+                    <div class="bento-badge-small">Automotive Dealer</div>
+                    <h3 data-lang="sol_automotive_title">AI Sales Concierge</h3>
+                    <p data-lang="sol_automotive_desc">Hybrid AI + Human handoff for luxury standard service</p>
+                    <div class="bento-stats-mini">
+                        <span>&lt;1min Response</span>
+                        <span>-20% Lead Leakage</span>
+                    </div>
+                    <ul class="feature-list-compact">
+                        <li>Natural language (TH/EN)</li>
+                        <li>Seamless human handoff</li>
+                        <li>24/7 availability</li>
+                    </ul>
+                </div>
 
-                <!-- Solution 3 -->
-                <a href="solutions.html#retail" class="bento-card bento-amber">
+                <!-- Solution 3 - Retail -->
+                <div class="bento-item bento-amber" id="retail-detail">
                     <div class="bento-icon">🏪</div>
-                    <h3>Retail/Service</h3>
-                    <p>Omni-Channel Sync</p>
-                    <span class="bento-metric">Zero Double-Booking</span>
-                </a>
+                    <div class="bento-badge-small">Retail/Service</div>
+                    <h3 data-lang="sol_retail_title">Omni-Channel Sync</h3>
+                    <p data-lang="sol_retail_desc">Centralized booking & POS integration</p>
+                    <div class="bento-stats-mini">
+                        <span>Zero Double-Booking</span>
+                        <span>+35% Efficiency</span>
+                    </div>
+                    <ul class="feature-list-compact">
+                        <li>Real-time slot sync</li>
+                        <li>Auto reminders</li>
+                        <li>Revenue dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Proof & Infrastructure -->
+    <section class="tech-proof-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">How It Works</span>
+                <h2 data-lang="tech_stack_title">System Architecture</h2>
+                <p data-lang="tech_stack_desc">Enterprise-grade workflow powered by industry-leading tools</p>
             </div>
 
-            <div class="section-cta">
-                <a href="solutions.html" class="btn-explore">
-                    Explore All Solutions
-                    <span class="arrow">→</span>
-                </a>
+            <!-- Workflow Diagram -->
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <div class="layer-label">Input Layer</div>
+                    <div class="layer-items">
+                        <div class="arch-node">📱 Website</div>
+                        <div class="arch-node">💬 Line OA</div>
+                        <div class="arch-node">📲 WhatsApp</div>
+                        <div class="arch-node">📧 Email</div>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-label">Processing Layer</div>
+                    <div class="layer-items">
+                        <div class="arch-node highlight">🤖 AI Classification</div>
+                        <div class="arch-node highlight">📊 Smart Routing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Grid -->
+            <div class="tech-stack-section" style="margin-top: 80px; text-align: center;">
+                <h3 data-lang="tech_stack_title" style="margin-bottom: 30px; font-family: 'Outfit';">Enterprise Tech
+                    Stack</h3>
+                <div class="tech-logos-compact"
+                    style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.8;">
+                    <div class="tech-logo-item" title="Make.com"><span>Make.com</span></div>
+                    <div class="tech-logo-item" title="OpenAI"><span>OpenAI</span></div>
+                    <div class="tech-logo-item" title="Supabase"><span>Supabase</span></div>
+                    <div class="tech-logo-item" title="FlutterFlow"><span>FlutterFlow</span></div>
+                    <div class="tech-logo-item" title="Line API"><span>Line API</span></div>
+                    <div class="tech-logo-item" title="Google Cloud"><span>Google Cloud</span></div>
+                </div>
+            </div>
+
+            <!-- Infrastructure Cards -->
+            <div class="infra-grid-refined"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 80px;">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">🔒</div>
+                    <h4 data-lang="infra_security" style="margin: 15px 0;">Enterprise Security</h4>
+                    <p style="color: var(--text-muted);">End-to-end encryption & API Security</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">⚡</div>
+                    <h4 data-lang="infra_uptime" style="margin: 15px 0;">99.9% Uptime</h4>
+                    <p style="color: var(--text-muted);">Redundant server architecture</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">📋</div>
+                    <h4 data-lang="infra_compliance" style="margin: 15px 0;">PDPA Compliant</h4>
+                    <p style="color: var(--text-muted);">Data handling for Thai Law</p>
+                </div>
             </div>
         </div>
     </section>
@@ -580,7 +681,7 @@
                     </div>
                 </div>
 
-                <a href="solutions.html" class="btn-cta-large" data-lang="btn_demo">
+                <a href="#solutions" class="btn-cta-large" data-lang="btn_demo">
                     Request a Solution Demo
                 </a>
             </div>
@@ -593,7 +694,7 @@
             <div class="footer-brand" data-en="Sirawith.K" data-th="สิรวิชญ์.K">Sirawith.K</div>
             <div class="footer-links">
                 <a href="index.html" data-lang="nav_home">Home</a>
-                <a href="solutions.html" data-lang="nav_solutions">Solutions</a>
+                <a href="#solutions" data-lang="nav_solutions">Solutions</a>
                 <a href="#about" data-lang="nav_about">About</a>
                 <a href="#contact" data-lang="nav_contact">Contact</a>
             </div>
