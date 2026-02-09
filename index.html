@@ -436,6 +436,36 @@
                     </a>
                 </div>
 
+                <!-- Contact Form -->
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name" data-lang="form_name">Name</label>
+                        <input type="text" id="name" name="name" required data-en-placeholder="Your Name"
+                            data-th-placeholder="ชื่อของคุณ" placeholder="Your Name">
+                        <span class="error-msg" data-lang="form_error_name">Please enter your name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-lang="form_email">Email</label>
+                        <input type="email" id="email" name="email" required data-en-placeholder="your@email.com"
+                            data-th-placeholder="อีเมลของคุณ" placeholder="your@email.com">
+                        <span class="error-msg" data-lang="form_error_email">Please enter a valid email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-lang="form_message">Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            data-en-placeholder="Tell me about your project..."
+                            data-th-placeholder="บอกเล่าโปรเจ็กต์ของคุณ..."
+                            placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" data-lang="form_submit">Send Message</button>
+                </form>
+
+                <!-- Success State -->
+                <div id="formSuccess" class="form-success">
+                    <div class="success-checkmark">✓</div>
+                    <p class="success-text" data-lang="form_success">Message Sent Successfully!</p>
+                </div>
+
                 <a href="solutions.html" class="btn-cta-large" data-lang="btn_demo">
                     Request a Solution Demo
                 </a>
@@ -465,24 +495,7 @@
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/language.js"></script>
 
-    <!-- Mobile Menu Script -->
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
         // Page transition effect
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('loaded');

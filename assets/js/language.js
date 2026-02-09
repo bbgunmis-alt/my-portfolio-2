@@ -63,6 +63,13 @@ const translations = {
                         // Contact
                         contact_title: "Let's Build Together",
                         contact_subtitle: "Ready to upgrade your business with Enterprise-grade Automation?",
+                        form_name: "Name",
+                        form_email: "Email",
+                        form_message: "Message",
+                        form_error_name: "Please enter your name",
+                        form_error_email: "Please enter a valid email",
+                        form_submit: "Send Message",
+                        form_success: "Message Sent Successfully!",
                         btn_demo: "Request a Solution Demo",
 
                         // Solutions Page Specific
@@ -144,6 +151,13 @@ const translations = {
                         // Contact
                         contact_title: "เริ่มสร้างระบบของคุณ",
                         contact_subtitle: "พร้อมยกระดับธุรกิจด้วยระบบ Automation ระดับ Enterprise หรือยัง?",
+                        form_name: "ชื่อ",
+                        form_email: "อีเมล",
+                        form_message: "ข้อความ",
+                        form_error_name: "กรุณากรอกชื่อของคุณ",
+                        form_error_email: "กรุณากรอกอีเมลที่ถูกต้อง",
+                        form_submit: "ส่งข้อความ",
+                        form_success: "ส่งข้อความสำเร็จแล้ว!",
                         btn_demo: "ขอสาธิตระบบ (Demo)",
 
                         // Solutions Page Specific
