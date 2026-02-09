@@ -122,8 +122,12 @@
 
     <!-- Hero Section (Premium Enterprise Style) -->
     <header class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="Image/leadflow-demo.mp4" type="video/mp4">
+            <!-- Fallback is handled via CSS background on .hero-section -->
+        </video>
         <div class="hero-bg-overlay"></div>
-        <div class="hero-container">
+        <div class="hero-container parallax-target">
             <div class="hero-content">
                 <div class="hero-typing-wrapper">
                     <span class="typing-text" id="typing-name"></span><span class="cursor">|</span>

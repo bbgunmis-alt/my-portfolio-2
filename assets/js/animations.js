@@ -264,6 +264,19 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 ease: "power2.out"
                                     });
                         });
-            }
-});
+                        // Hero Parallax Effect
+                        const heroParallax = document.querySelector('.parallax-target');
+                        if (heroParallax) {
+                                    document.addEventListener('mousemove', (e) => {
+                                                const mouseX = (e.clientX / window.innerWidth - 0.5) * 20; // Max 20px
+                                                const mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+                                                gsap.to(heroParallax, {
+                                                            x: mouseX,
+                                                            y: mouseY,
+                                                            duration: 1,
+                                                            ease: "power2.out"
+                                                });
+                                    });
+                        }
+            });
 
