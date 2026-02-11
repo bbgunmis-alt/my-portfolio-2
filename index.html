@@ -29,6 +29,9 @@
     <link rel="apple-touch-icon" href="Image/hero-profile.png">
     <link rel="icon" type="image/png" href="Image/hero-profile.png">
 
+    <!-- EmailJS Integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script">
     <link rel="preload" href="assets/css/global.css" as="style">
@@ -39,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Outfit:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/global.css">
 </head>
@@ -646,8 +649,9 @@
                     </a>
                 </div>
 
-                <!-- Contact Form -->
-                <form id="contactForm" class="contact-form" novalidate>
+                <!-- Contact Form (Netlify Integrated) -->
+                <form id="contactForm" class="contact-form" novalidate data-netlify="true" name="contact">
+                    <input type="hidden" name="form-name" value="contact">
                     <div class="form-group">
                         <label for="name" data-lang="form_name">Name</label>
                         <input type="text" id="name" name="name" required data-en-placeholder="Your Name"
@@ -667,17 +671,20 @@
                             data-th-placeholder="บอกเล่าโปรเจ็กต์ของคุณ..."
                             placeholder="Tell me about your project..."></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" data-lang="form_submit">Send Message</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text" data-lang="form_submit">Send Message</span>
+                        <div class="btn-loader"></div>
+                    </button>
                 </form>
 
                 <!-- Success State -->
                 <div id="formSuccess" class="form-success">
                     <div class="success-checkmark">✓</div>
                     <div class="success-text-content">
-                        <h2 data-en="Message Sent!" data-th="ส่งสำเร็จ!">Message Sent!</h2>
-                        <p data-en="Thank you for reaching out. I'll get back to you shortly."
-                            data-th="ขอบคุณที่ติดต่อมา จะรีบตอบกลับโดยเร็วที่สุดครับ">Thank you for reaching out. I'll
-                            get back to you shortly.</p>
+                        <h2 data-lang="success_title">Message Sent!</h2>
+                        <p data-lang="success_desc">Thank you for reaching out. I will get back to you shortly.</p>
+                        <a href="#hero" class="btn-primary-glow" style="margin-top: 30px;" data-lang="success_btn">Back
+                            to Top</a>
                     </div>
                 </div>
 

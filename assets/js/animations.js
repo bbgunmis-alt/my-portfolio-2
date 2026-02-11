@@ -1,49 +1,74 @@
-/* --- PREMIUM ANIM.JS (GSAP 3.12.5 + ScrollTrigger) --- */
+﻿/* --- PREMIUM ANIM.JS (GSAP 3.12.5 + ScrollTrigger) --- */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-            /* --- 1. Custom Cursor Logic (Premium Trail) --- */
-            const cursor = document.querySelector('.custom-cursor');
-            const follower = document.querySelector('.cursor-follower');
-
-            if (cursor && follower) {
-                        const prefersMotion = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
-                        const isPointerFine = window.matchMedia("(pointer: fine)").matches;
-
-                        if (prefersMotion && isPointerFine) {
-                                    let mouseX = 0;
-                                    let mouseY = 0;
-                                    let followerX = 0;
-                                    let followerY = 0;
-
-                                    function animateCursor() {
-                                                followerX += (mouseX - followerX) * 0.15;
-                                                followerY += (mouseY - followerY) * 0.15;
-
-                                                cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-                                                follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
-
-                                                requestAnimationFrame(animateCursor);
+            /* --- 0. Helper Functions --- */
+            const throttle = (func, limit) => {
+                        let inThrottle;
+                        return function () {
+                                    const args = arguments;
+                                    const context = this;
+                                    if (!inThrottle) {
+                                                func.apply(context, args);
+                                                inThrottle = true;
+                                                setTimeout(() => inThrottle = false, limit);
                                     }
-
-                                    animateCursor();
-
-                                    document.addEventListener('mousemove', (e) => {
-                                                mouseX = e.clientX;
-                                                mouseY = e.clientY;
-                                    });
-
-                                    // Hover Effect
-                                    const hoverTargets = document.querySelectorAll('a, button, .feature-card, .bento-card, .btn-primary-glow, .profile-card, .tech-card, .infra-card, .lang-btn, .hamburger');
-                                    hoverTargets.forEach(target => {
-                                                target.addEventListener('mouseenter', () => {
-                                                            document.body.classList.add('is-hovering');
-                                                });
-                                                target.addEventListener('mouseleave', () => {
-                                                            document.body.classList.remove('is-hovering');
-                                                });
-                                    });
                         }
+            };
+
+            /* --- 1. Custom Cursor Logic (Premium Trail) --- */
+            try {
+                        const cursor = document.querySelector('.custom-cursor');
+                        const follower = document.querySelector('.cursor-follower');
+
+                        if (cursor && follower) {
+                                    const prefersMotion = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+                                    const isPointerFine = window.matchMedia("(pointer: fine)").matches;
+                                    const isNotTouch = window.matchMedia("(hover: hover)").matches;
+
+                                    if (prefersMotion && isPointerFine && isNotTouch) {
+                                                let mouseX = 0;
+                                                let mouseY = 0;
+                                                let followerX = 0;
+                                                let followerY = 0;
+                                                let rafId = null;
+
+                                                function animateCursor() {
+                                                            followerX += (mouseX - followerX) * 0.15;
+                                                            followerY += (mouseY - followerY) * 0.15;
+
+                                                            cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+                                                            follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+
+                                                            rafId = requestAnimationFrame(animateCursor);
+                                                }
+
+                                                animateCursor();
+
+                                                const handleMouseMove = throttle((e) => {
+                                                            mouseX = e.clientX;
+                                                            mouseY = e.clientY;
+                                                }, 16);
+
+                                                document.addEventListener('mousemove', handleMouseMove);
+
+                                                // Hover Effect
+                                                const hoverTargets = document.querySelectorAll('a, button, .feature-card, .bento-card, .btn-primary-glow, .profile-card, .tech-card, .infra-card, .lang-btn, .hamburger');
+                                                hoverTargets.forEach(target => {
+                                                            target.addEventListener('mouseenter', () => {
+                                                                        document.body.classList.add('is-hovering');
+                                                            });
+                                                            target.addEventListener('mouseleave', () => {
+                                                                        document.body.classList.remove('is-hovering');
+                                                            });
+                                                });
+                                    } else {
+                                                cursor.style.display = 'none';
+                                                follower.style.display = 'none';
+                                    }
+                        }
+            } catch (error) {
+                        console.error("Cursor Animation Error:", error);
             }
 
             /* --- 2. Scroll Progress Bar --- */
@@ -148,40 +173,66 @@ document.addEventListener('DOMContentLoaded', () => {
                                     });
 
                                     if (isValid) {
-                                                const submitBtn = contactForm.querySelector('.btn-submit');
-                                                const originalText = submitBtn.innerHTML;
+                                                const submitBtn = document.getElementById('submitBtn');
                                                 submitBtn.disabled = true;
+                                                submitBtn.classList.add('loading');
 
                                                 const currentLang = document.documentElement.lang || 'en';
-                                                submitBtn.innerText = currentLang === 'th' ? 'กำลังส่ง...' : 'Sending...';
 
-                                                // Simulate form submission
-                                                await new Promise(resolve => setTimeout(resolve, 1500));
+                                                try {
+                                                            const formData = new FormData(contactForm);
+                                                            const response = await fetch("/", {
+                                                                        method: "POST",
+                                                                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                                                        body: new URLSearchParams(formData).toString(),
+                                                            });
 
-                                                // Success Animation
-                                                gsap.to(contactForm, {
-                                                            opacity: 0,
-                                                            scale: 0.95,
-                                                            duration: 0.5,
-                                                            onComplete: () => {
-                                                                        contactForm.style.display = 'none';
+                                                            if (!response.ok) throw new Error("Submission Failed");
 
-                                                                        // Update localized success text
-                                                                        const successTitle = formSuccess.querySelector('h2');
-                                                                        const successPara = formSuccess.querySelector('p');
+                                                            // Success Animation
+                                                            gsap.to(contactForm, {
+                                                                        opacity: 0,
+                                                                        y: -20,
+                                                                        duration: 0.5,
+                                                                        onComplete: () => {
+                                                                                    contactForm.style.display = 'none';
 
-                                                                        if (currentLang === 'th') {
-                                                                                    if (successTitle) successTitle.innerText = "ส่งสำเร็จ!";
-                                                                                    if (successPara) successPara.innerText = "ขอบคุณที่ติดต่อผม จะรีบตอบกลับโดยเร็วที่สุดครับ";
+                                                                                    // Localized Success Message
+                                                                                    const successTitle = formSuccess.querySelector('[data-lang="success_title"]');
+                                                                                    const successDesc = formSuccess.querySelector('[data-lang="success_desc"]');
+
+                                                                                    if (currentLang === 'th') {
+                                                                                                if (successTitle) successTitle.textContent = "เธชเนเธเธชเธณเน€เธฃเนเธ!";
+                                                                                                if (successDesc) successDesc.textContent = "เธเธญเธเธเธธเธ“เธ—เธตเนเธ•เธดเธ”เธ•เนเธญเธเธก เธเธฐเธฃเธตเธเธ•เธญเธเธเธฅเธฑเธเนเธ”เธขเน€เธฃเนเธงเธ—เธตเนเธชเธธเธ”เธเธฃเธฑเธ";
+                                                                                    } else {
+                                                                                                if (successTitle) successTitle.textContent = "Message Sent!";
+                                                                                                if (successDesc) successDesc.textContent = "Thank you for reaching out. I will get back to you shortly.";
+                                                                                    }
+
+                                                                                    formSuccess.classList.add('show');
+
+                                                                                    const checkmark = formSuccess.querySelector('.success-checkmark');
+                                                                                    const content = formSuccess.querySelectorAll('h2, p, .btn-primary-glow');
+
+                                                                                    gsap.fromTo(checkmark,
+                                                                                                { scale: 0, opacity: 0 },
+                                                                                                { scale: 1.2, opacity: 1, duration: 0.6, ease: "back.out(2)" }
+                                                                                    );
+                                                                                    gsap.fromTo(content,
+                                                                                                { y: 20, opacity: 0 },
+                                                                                                { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: 0.3 }
+                                                                                    );
                                                                         }
+                                                            });
 
-                                                                        formSuccess.classList.add('show');
-
-                                                                        // GSAP Success Reveal
-                                                                        gsap.from(".success-checkmark", { scale: 0, duration: 0.6, ease: "back.out(1.7)" });
-                                                                        gsap.from(".success-text-content > *", { opacity: 0, y: 20, duration: 0.5, stagger: 0.2, delay: 0.3 });
-                                                            }
-                                                });
+                                                } catch (error) {
+                                                            console.error("Form error:", error);
+                                                            alert(currentLang === 'th'
+                                                                        ? 'เธเธญเธญเธ เธฑเธข เน€เธเธดเธ”เธเนเธญเธเธดเธ”เธเธฅเธฒเธ”เนเธเธเธฒเธฃเธชเนเธเธเนเธญเธกเธนเธฅ เธเธฃเธธเธ“เธฒเธฅเธญเธเนเธซเธกเนเธญเธตเธเธเธฃเธฑเนเธ'
+                                                                        : 'Sorry, something went wrong. Please try again later.');
+                                                            submitBtn.disabled = false;
+                                                            submitBtn.classList.remove('loading');
+                                                }
                                     }
                         });
 
@@ -265,18 +316,33 @@ document.addEventListener('DOMContentLoaded', () => {
                                     });
                         });
                         // Hero Parallax Effect
-                        const heroParallax = document.querySelector('.parallax-target');
-                        if (heroParallax) {
-                                    document.addEventListener('mousemove', (e) => {
-                                                const mouseX = (e.clientX / window.innerWidth - 0.5) * 20; // Max 20px
-                                                const mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
-                                                gsap.to(heroParallax, {
-                                                            x: mouseX,
-                                                            y: mouseY,
-                                                            duration: 1,
-                                                            ease: "power2.out"
-                                                });
-                                    });
-                        }
-            });
+                        try {
+                                    const heroParallax = document.querySelector('.parallax-target');
+                                    if (heroParallax) {
+                                                let pMouseX = 0;
+                                                let pMouseY = 0;
+                                                let targetX = 0;
+                                                let targetY = 0;
 
+                                                function animateParallax() {
+                                                            targetX += (pMouseX - targetX) * 0.1;
+                                                            targetY += (pMouseY - targetY) * 0.1;
+
+                                                            heroParallax.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+                                                            requestAnimationFrame(animateParallax);
+                                                }
+
+                                                animateParallax();
+
+                                                const handleParallaxMove = throttle((e) => {
+                                                            pMouseX = (e.clientX / window.innerWidth - 0.5) * 20;
+                                                            pMouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+                                                }, 16);
+
+                                                document.addEventListener('mousemove', handleParallaxMove);
+                                    }
+                        } catch (error) {
+                                    console.error("Parallax Animation Error:", error);
+                        }
+            }
+});

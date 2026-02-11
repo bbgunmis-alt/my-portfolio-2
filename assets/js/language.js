@@ -79,6 +79,9 @@ const translations = {
                         form_error_email: "Please enter a valid email",
                         form_submit: "Send Message",
                         form_success: "Message Sent Successfully!",
+                        success_title: "Message Sent!",
+                        success_desc: "Thank you for reaching out. I will get back to you shortly.",
+                        success_btn: "Back to Top",
                         btn_demo: "Request a Solution Demo",
 
                         // Solutions Page Specific
@@ -176,6 +179,9 @@ const translations = {
                         form_error_email: "กรุณากรอกอีเมลที่ถูกต้อง",
                         form_submit: "ส่งข้อความ",
                         form_success: "ส่งข้อความสำเร็จแล้ว!",
+                        success_title: "ส่งสำเร็จ!",
+                        success_desc: "ขอบคุณที่ติดต่อผม จะรีบตอบกลับโดยเร็วที่สุดครับ",
+                        success_btn: "กลับไปด้านบน",
                         btn_demo: "ขอสาธิตระบบ (Demo)",
 
                         // Solutions Page Specific
