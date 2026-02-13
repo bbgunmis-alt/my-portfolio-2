@@ -1,22 +1,32 @@
 ﻿/* Global Variables & Theme Config */
 :root {
-    /* Premium Dark Theme (Default) */
-    --bg-primary: #020617;
-    --bg-secondary: #0f172a;
-    --bg-card: rgba(30, 41, 59, 0.4);
-    --bg-card-hover: rgba(30, 41, 59, 0.6);
-    --text-primary: #e2e8f0;
-    --text-muted: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --accent-primary: #3b82f6;
-    --accent-secondary: #8b5cf6;
-    --accent-teal: #2dd4bf;
-    --nav-bg: rgba(2, 6, 23, 0.85);
-    --btn-primary-bg: linear-gradient(135deg, #0f766e 0%, #1e3a8a 100%);
-    --gradient-overlay-hero: radial-gradient(circle at 20% 40%, rgba(20, 184, 166, 0.15), transparent 40%),
-        radial-gradient(circle at 80% 60%, rgba(30, 58, 138, 0.2), transparent 40%),
-        linear-gradient(180deg, #0f172a 0%, #020617 100%);
-    --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.5);
+    /* Premium Dark Theme (Obsidian) */
+    --bg-primary: #0A1428;
+    --bg-secondary: #0F1A2F;
+    --bg-card: rgba(16, 26, 47, 0.7);
+    --bg-card-hover: rgba(22, 34, 57, 0.9);
+    --bg-card-border: rgba(255, 255, 255, 0.08);
+
+    --text-primary: #FFFFFF;
+    --text-muted: #94A3B8;
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Premium Brand Colors */
+    --accent-cyan: #00D9FF;
+    --accent-indigo: #6366F1;
+    --accent-primary: var(--accent-indigo);
+    --accent-teal: var(--accent-cyan);
+
+    --nav-bg: rgba(10, 20, 40, 0.85);
+
+    /* Typography */
+    --font-heading: 'Red Hat Display', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Shadows & Effects */
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.2);
+    --grad-primary: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 [data-theme="light"] {
@@ -105,9 +115,23 @@ body,
 /* Global Styles - Shared across all pages */
 
 /* Page Transitions */
+/* Global Styles */
 body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
     opacity: 0;
     transition: opacity 0.4s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+.premium-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
 }
 
 body.loaded {
@@ -3528,4 +3552,265 @@ body.loaded .page-overlay {
         min-width: 80px;
         padding: 15px;
     }
+}
+/* --- PREMIUM REDESIGN COMPONENTS --- */
+
+/* 1. Metrics Section */
+.metrics-container {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(12px);
+    will-change: transform;
+}
+
+.metric-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--grad-surface);
+    pointer-events: none;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 217, 255, 0.3);
+}
+
+.metric-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    line-height: 1;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.3));
+}
+
+.metric-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* 2. Premium Buttons */
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: none;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: var(--grad-primary);
+    color: white;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid var(--bg-card-border);
+    backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* 3. Investment Tiers */
+.investment-section {
+    padding: 100px 20px;
+    background: var(--bg-secondary);
+}
+
+.investment-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.investment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tier-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 24px;
+    padding: 45px;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier-card.featured {
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.tier-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.tier-card .duration {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.tier-card .investment {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.tier-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.tier-card ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.tier-card ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-indigo);
+}
+
+.tier-card .target {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.tier-card .outcome {
+    font-weight: 600;
+    color: var(--accent-cyan);
+}
+
+/* 4. Testimonials */
+.testimonials-section {
+    padding: 100px 20px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+}
+
+.testimonial-card .stars {
+    color: #FBBF24;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-name {
+    font-weight: 700;
+    color: white;
+}
+
+.client-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.client-company {
+    font-size: 0.85rem;
+    color: var(--accent-indigo);
+    font-weight: 600;
+}
+
+.result-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--accent-cyan);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
