@@ -1,0 +1,11 @@
+{
+"name": "portfolio-2",
+"version": "1.0.0",
+"scripts": {
+"format": "prettier --write \"**/*.{html,css,js,json}\"",
+"serve": "python -m http.server 8000",
+"lighthouse": "npx lighthouse https://bbgunmis-alt.github.io/my-portfolio-2 --view",
+"deploy": "git add . && git commit -m 'Update portfolio' && git push",
+"gemini-fix": "echo 'Use Continue extension: Cmd+Shift+L to ask Gemini'"
+}
+}
