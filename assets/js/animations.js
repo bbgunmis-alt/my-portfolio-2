@@ -181,10 +181,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                                 try {
                                                             const formData = new FormData(contactForm);
-                                                            const response = await fetch("/", {
+                                                            formData.append("_subject", "Portfolio contact (homepage)");
+                                                            formData.append("_captcha", "false");
+                                                            const response = await fetch("https://formsubmit.co/ajax/sirawith.keawsee@gmail.com", {
                                                                         method: "POST",
-                                                                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                                                                        body: new URLSearchParams(formData).toString(),
+                                                                        headers: { Accept: "application/json" },
+                                                                        body: formData,
                                                             });
 
                                                             if (!response.ok) throw new Error("Submission Failed");
@@ -284,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ];
 
             revealElements.forEach(item => {
-                        if (document.querySelector(item.selector)) {
+                        if (document.querySelector(item.selector) && document.querySelector(item.trigger)) {
                                     gsap.from(item.selector, {
                                                 scrollTrigger: {
                                                             trigger: item.trigger,

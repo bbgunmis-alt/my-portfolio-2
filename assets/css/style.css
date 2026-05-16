@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Global Styles */
 :root {
   --primary-color: #111;
@@ -19,9 +20,35 @@
 
 * {
   box-sizing: border-box;
+=======
+/* Luxury Details & Custom Utilities */
+
+:root {
+    --luxury-blue: #1e293b;
+    --luxury-accent: #3b82f6;
 }
 
+/* Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+>>>>>>> 7f08e1182aa93edc84eb8a3ecab5118458fcfbd8
+}
+
+.dark .glass-card {
+    background: rgba(15, 23, 42, 0.6);
+}
+
+/* Custom Gradients */
+.bg-gradient-luxury {
+    background: linear-gradient(135deg, #0a0f1e 0%, #1e293b 100%);
+}
+
+/* Smooth Typography */
 body {
+<<<<<<< HEAD
   font-family: 'Prompt', sans-serif;
   background-color: var(--accent-color);
   color: var(--primary-color);
@@ -1218,3 +1245,53 @@ but retaining the media query at the end */
     padding: 12px 20px;
   }
 }
+=======
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+}
+
+/* Subtle Hover Effects */
+.case-study-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-study-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--luxury-accent);
+    z-index: 100;
+}
+
+/* Custom Selection */
+::selection {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+}
+
+/* Accessibility: Visible Focus States */
+:focus-visible {
+    outline: 2px solid var(--luxury-accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+>>>>>>> 7f08e1182aa93edc84eb8a3ecab5118458fcfbd8

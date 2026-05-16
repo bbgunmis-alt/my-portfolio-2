@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 "name": "portfolio-2",
 "version": "1.0.0",
 "scripts": {
@@ -9,3 +10,11 @@
 "gemini-fix": "echo 'Use Continue extension: Cmd+Shift+L to ask Gemini'"
 }
 }
+=======
+  "dependencies": {
+    "lighthouse": "^13.3.0",
+    "puppeteer": "^24.43.1",
+    "sharp": "^0.34.5"
+  }
+}
+>>>>>>> 7f08e1182aa93edc84eb8a3ecab5118458fcfbd8
