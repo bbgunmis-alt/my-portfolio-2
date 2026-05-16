@@ -126,6 +126,23 @@
         @media (min-width: 768px) {
             .hero-diecut-img { max-width: 440px; }
         }
+        .about-diecut {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            flex-shrink: 0;
+        }
+        .about-diecut-img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 16px 32px rgba(15, 23, 42, 0.1));
+        }
+        @media (min-width: 768px) {
+            .about-diecut-img { max-width: 320px; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -361,11 +378,13 @@
                 </p>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-8 items-center mb-12 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm">
-                <picture>
-                    <source srcset="Image/profile-hero.webp" type="image/webp">
-                    <img src="Image/hero-profile.png" alt="Sirawith Kaewsee — credibility and professional background" class="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover" width="160" height="160" loading="lazy">
-                </picture>
+            <div class="flex flex-col md:flex-row gap-8 items-center mb-12">
+                <div class="about-diecut">
+                    <picture>
+                        <source srcset="Image/about-3-diecut.webp" type="image/webp">
+                        <img src="Image/about-3-diecut.png" alt="Sirawith Kaewsee — About Floy" class="about-diecut-img" width="720" height="405" loading="lazy">
+                    </picture>
+                </div>
                 <p class="text-base text-gray-600 leading-relaxed flex-1" data-en="Ex-UNIQLO, BMW Performance Motors, and Origin Property — now building LeadFlow systems for premium SMEs." data-th="ประสบการณ์จาก UNIQLO, BMW และ Origin — ปัจจุบันสร้างระบบ LeadFlow ให้ SME มูลค่าสูง">ประสบการณ์จาก UNIQLO, BMW และ Origin — ปัจจุบันสร้างระบบ LeadFlow ให้ SME มูลค่าสูง</p>
             </div>
             <div class="about-grid grid md:grid-cols-3 gap-8">
