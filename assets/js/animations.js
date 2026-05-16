@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ];
 
             revealElements.forEach(item => {
-                        if (document.querySelector(item.selector)) {
+                        if (document.querySelector(item.selector) && document.querySelector(item.trigger)) {
                                     gsap.from(item.selector, {
                                                 scrollTrigger: {
                                                             trigger: item.trigger,

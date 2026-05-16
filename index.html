@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://bbgunmis-alt.github.io/my-portfolio-2/">
+    <link rel="preload" href="Image/project-leadflow-dashboard.webp" as="image" type="image/webp">
     
     <!-- Tailwind CSS (CDN for minimal setup) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -55,20 +57,25 @@
 <body class="bg-gray-50 text-gray-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50" aria-label="หลัก">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold tracking-tight text-gray-900">Floy<span class="text-brand-600">.</span>S</a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#top" class="text-2xl font-bold tracking-tight text-gray-900">Floy<span class="text-brand-600">.</span>S</a>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a href="#services" class="hover:text-brand-600 transition">บริการ (Services)</a>
                 <a href="#projects" class="hover:text-brand-600 transition">ผลงาน (Projects)</a>
+                <a href="#experience" class="hover:text-brand-600 transition">ประสบการณ์ (Experience)</a>
                 <a href="#about" class="hover:text-brand-600 transition">เกี่ยวกับผม (About)</a>
                 <a href="#contact" class="hover:text-brand-600 transition">ติดต่อ (Contact)</a>
+                <div class="flex items-center gap-1 border border-gray-200 rounded-lg p-0.5" role="group" aria-label="เลือกภาษา">
+                    <button type="button" class="lang-btn text-xs font-semibold px-2 py-1 rounded-md text-white bg-brand-600" data-lang-val="th" aria-pressed="true">TH</button>
+                    <button type="button" class="lang-btn text-xs font-semibold px-2 py-1 rounded-md text-gray-600" data-lang-val="en" aria-pressed="false">EN</button>
+                </div>
             </div>
             <a href="#contact" class="hidden md:inline-flex bg-brand-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-brand-900 transition shadow-md">
                 รับคำปรึกษาฟรี
             </a>
             <!-- Mobile Menu Button (simplified for MVP) -->
-            <button class="md:hidden text-gray-600 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="เปิด/ปิดเมนูมือถือ" aria-expanded="false" aria-controls="mobile-menu">
+            <button type="button" class="md:hidden text-gray-600 focus:outline-none" onclick="(function(){var m=document.getElementById('mobile-menu');var b=this;var hidden=m.classList.toggle('hidden');b.setAttribute('aria-expanded',hidden?'false':'true');}).call(this)" aria-label="เปิด/ปิดเมนูมือถือ" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
@@ -76,13 +83,14 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4 shadow-lg absolute w-full">
             <a href="#services" class="block text-gray-700 hover:text-brand-600">บริการ (Services)</a>
             <a href="#projects" class="block text-gray-700 hover:text-brand-600">ผลงาน (Projects)</a>
+            <a href="#experience" class="block text-gray-700 hover:text-brand-600">ประสบการณ์ (Experience)</a>
             <a href="#about" class="block text-gray-700 hover:text-brand-600">เกี่ยวกับผม (About)</a>
             <a href="#contact" class="block text-brand-600 font-medium">ติดต่อ (Contact)</a>
         </div>
     </nav>
 
     <!-- 1) Hero Section -->
-    <section class="hero pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12" style="background-image:url('Image/2.avif');background-size:cover;background-position:center;" >
+    <section id="top" class="hero pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12" style="background-image:url('Image/2.png');background-size:cover;background-position:center;" >
         <div class="md:w-1/2 space-y-6">
             <div class="badge inline-block px-3 py-1 bg-brand-100 text-brand-600 text-sm font-semibold rounded-full"
                  data-en="Luxury Real Estate & Investment Consultant"
@@ -469,9 +477,9 @@
                 <!-- Project 1: PATSTICKER -->
                 <div class="template-card bg-gray-50 rounded-2xl p-8 border border-gray-100">
     <picture class="block w-full mb-4">
-        <source srcset="Image/project-leadflow-Realestate.avif" type="image/avif">
-        <source srcset="Image/project-leadflow-Realestate.webp" type="image/webp">
-        <img src="Image/project-leadflow-Realestate.jpg" alt="Real estate automation proof image" class="w-full object-cover rounded-xl" width="800" height="450" >
+        <source srcset="Image/project-leadflow-dashboard.avif" type="image/avif">
+        <source srcset="Image/project-leadflow-dashboard.webp" type="image/webp">
+        <img src="Image/project-leadflow-dashboard.jpg" alt="Real estate automation proof image" class="w-full object-cover rounded-xl" width="800" height="450" loading="lazy">
     </picture>
                     <div class="text-xs font-bold text-brand-600 mb-2 uppercase tracking-wide" data-en="Retail & AI" data-th="ธุรกิจค้าปลีกและ AI">ธุรกิจค้าปลีกและ AI</div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4" data-en="PATSTICKER AI Chatbot" data-th="แชทบอท AI สำหรับ PATSTICKER">PATSTICKER AI Chatbot</h3>
@@ -546,8 +554,8 @@
         </div>
     </section>
 
-    <!-- 4) About Section -->
-    <section id="about" class="py-20 bg-white">
+    <!-- 4) Profile Section -->
+    <section id="profile" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
                 <div class="space-y-6">
@@ -577,30 +585,29 @@
                 <p class="text-gray-300">กรอกข้อมูลด้านล่างเพื่อให้ผมประเมินระบบที่เหมาะสมกับธุรกิจคุณ</p>
             </div>
 
-            <!-- Contact Form (Mailto Implementation for MVP) -->
-            <!-- Note: In Phase 2, this can be swapped with an embedded Google Form or webhook endpoint -->
-            <form action="mailto:sirawith.keawsee@gmail.com" method="GET" enctype="text/plain" class="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-6">
+            <form action="https://formsubmit.co/sirawith.keawsee@gmail.com" method="POST" class="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-6">
+                <input type="hidden" name="_subject" value="[LeadFlow TH] สนใจปรึกษาระบบ Automation">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://bbgunmis-alt.github.io/my-portfolio-2/?sent=1#contact">
+                <input type="hidden" name="_template" value="table">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-2">ชื่อของคุณ (Name)</label>
-                        <input type="text" name="name" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="ระบุชื่อ">
+                        <label for="lead-name" class="block text-sm font-medium text-gray-300 mb-2">ชื่อของคุณ (Name)</label>
+                        <input id="lead-name" type="text" name="name" required autocomplete="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="ระบุชื่อ">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-2">LINE ID หรือเบอร์ติดต่อ</label>
-                        <input type="text" name="contact" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="LINE ID / Phone">
+                        <label for="lead-contact" class="block text-sm font-medium text-gray-300 mb-2">LINE ID หรือเบอร์ติดต่อ</label>
+                        <input id="lead-contact" type="text" name="contact" required autocomplete="tel" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="LINE ID / Phone">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-2">ประเภทธุรกิจของคุณ</label>
-                    <input type="text" name="business_type" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="เช่น คลินิก, อสังหาฯ, ขายส่ง">
+                    <label for="lead-business" class="block text-sm font-medium text-gray-300 mb-2">ประเภทธุรกิจของคุณ</label>
+                    <input id="lead-business" type="text" name="business_type" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="เช่น คลินิก, อสังหาฯ, ขายส่ง">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-2">ปัญหาหลักที่ต้องการแก้ไข (Pain Point)</label>
-                    <textarea name="body" rows="4" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="เช่น ตอบไลน์ลูกค้าไม่ทัน, อยากเก็บข้อมูลลูกค้าลงระบบอัตโนมัติ..."></textarea>
+                    <label for="lead-message" class="block text-sm font-medium text-gray-300 mb-2">ปัญหาหลักที่ต้องการแก้ไข (Pain Point)</label>
+                    <textarea id="lead-message" name="message" rows="4" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition" placeholder="เช่น ตอบไลน์ลูกค้าไม่ทัน, อยากเก็บข้อมูลลูกค้าลงระบบอัตโนมัติ..."></textarea>
                 </div>
-                <!-- Hidden subject field to structure the email -->
-                <input type="hidden" name="subject" value="[LeadFlow TH] สนใจปรึกษาระบบ Automation">
-                
                 <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-4 rounded-lg transition shadow-lg text-lg">
                     ส่งข้อมูลเพื่อรับคำปรึกษาฟรี
                 </button>
@@ -620,6 +627,18 @@
 
     <!-- Analytics & Tracking (MVP) -->
     <script>
+        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                const notice = document.createElement('p');
+                notice.className = 'text-center text-green-300 font-medium mb-6';
+                notice.setAttribute('role', 'status');
+                notice.textContent = 'ส่งข้อมูลสำเร็จแล้ว ขอบคุณครับ จะติดต่อกลับโดยเร็ว';
+                contactSection.querySelector('form')?.before(notice);
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
         // 1. Scroll Depth Tracking
         let scrollMarks = { 25: false, 50: false, 75: false, 100: false };
         window.addEventListener('scroll', () => {
@@ -650,9 +669,10 @@
         });
     </script>
     
+    <script src="assets/js/page-i18n.js" defer></script>
     <!-- GSAP & Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="animations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="animations.js" defer></script>
 </body>
 </html>
