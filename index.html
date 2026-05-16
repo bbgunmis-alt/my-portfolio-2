@@ -25,8 +25,7 @@
     <meta name="twitter:title" content="Floy Sirawich Kaewsri | AI & Automation">
     <meta name="twitter:description" content="Luxury sales + automation systems for high-value SMEs in Thailand.">
     <meta name="twitter:image" content="https://bbgunmis-alt.github.io/my-portfolio-2/Image/hero-profile.png">
-    <link rel="preload" href="Image/profile-hero.webp" as="image" type="image/webp">
-    <link rel="preload" href="Image/project-leadflow-dashboard.webp" as="image" type="image/webp">
+    <link rel="preload" href="Image/2.png" as="image" type="image/png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -110,6 +109,23 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        .hero-diecut {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+        }
+        .hero-diecut-img {
+            width: 100%;
+            max-width: min(100%, 420px);
+            height: auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 24px 48px rgba(15, 23, 42, 0.12));
+        }
+        @media (min-width: 768px) {
+            .hero-diecut-img { max-width: 440px; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -151,10 +167,6 @@
     <!-- 1) Hero Section -->
     <section id="top" class="hero pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 bg-gradient-to-br from-gray-50 via-white to-brand-50">
         <div class="md:w-1/2 space-y-6">
-            <picture>
-                <source srcset="Image/profile-hero.webp" type="image/webp">
-                <img src="Image/profile_full.png" alt="Sirawith Kaewsee — professional portrait, luxury real estate and automation consultant" class="w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover border-4 border-white shadow-lg" width="128" height="128" fetchpriority="high">
-            </picture>
             <div class="badge inline-block px-3 py-1 bg-brand-100 text-brand-600 text-base font-semibold rounded-full"
                  data-en="Luxury Real Estate & Investment Consultant"
                  data-th="ที่ปรึกษาการลงทุนและอสังหาริมทรัพย์ระดับลักชัวรี">
@@ -176,16 +188,9 @@
                 <a href="#projects" class="text-center min-h-[44px] inline-flex items-center justify-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-medium transition text-lg" data-en="View portfolio" data-th="ดูตัวอย่างผลงาน">ดูตัวอย่างผลงาน</a>
             </div>
         </div>
-        <div class="md:w-1/2 w-full">
-            <div class="visual-card bg-white p-2 rounded-2xl shadow-xl border border-gray-100">
-                <!-- Hero Image / Dashboard Screenshot -->
-                <div class="aspect-video bg-gray-100 rounded-xl flex items-center justify-center relative overflow-hidden shadow-2xl border border-gray-200">
-                    <picture class="block w-full h-full">
-                        <source srcset="Image/project-leadflow-dashboard.avif" type="image/avif">
-                        <source srcset="Image/project-leadflow-dashboard.webp" type="image/webp">
-                        <img src="Image/project-leadflow-dashboard.jpg" alt="LeadFlow TH dashboard — proof of automation and lead tracking system" class="w-full h-full object-cover rounded-xl" loading="lazy" width="800" height="450">
-                    </picture>
-                </div>
+        <div class="md:w-1/2 w-full flex justify-center md:justify-end items-end">
+            <div class="visual-card hero-diecut">
+                <img src="Image/2.png" alt="Sirawith Kaewsee — professional portrait" class="hero-diecut-img" width="427" height="649" fetchpriority="high">
             </div>
         </div>
     </section>
