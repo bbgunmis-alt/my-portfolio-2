@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sirawith's Professional Workspace — Portfolios & LeadFlow Thailand">
+  <title>Sirawith | Workspace</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 2rem;
+    }
+    .container {
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      animation: fadeIn 0.8s ease-in;
+    }
+    .header { margin-bottom: 3rem; }
+    .header h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header p { font-size: 1.1rem; color: #a0a0a0; }
+    .buttons { display: flex; flex-direction: column; gap: 1.5rem; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.5rem 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #00d4ff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.25);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+      border: none;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #00b8e6, #6a26d4);
+      box-shadow: 0 12px 35px rgba(0, 212, 255, 0.45);
+    }
+    .btn-icon { font-size: 1.5rem; }
+    .footer {
+      margin-top: 3rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 640px) {
+      .btn { padding: 1.2rem 1.5rem; font-size: 1.1rem; }
+      .header p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 Sirawith's Workspace</h1>
+      <p>Pro Websites • Automation • AI Solutions</p>
+    </div>
+    <div class="buttons">
+      <a href="https://bbgunmis-alt.github.io/my-portfolio-2" class="btn btn-primary">
+        <span class="btn-icon">👤</span>
+        My Portfolio
+      </a>
+      <a href="/LeadFlow" class="btn">
+        <span class="btn-icon">🏭</span>
+        LeadFlow Thailand
+      </a>
+    </div>
+    <div class="footer">
+      <p>Built with speed | Bangkok, Thailand 🇹🇭</p>
+    </div>
+  </div>
+</body>
+</html>
