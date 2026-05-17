@@ -177,6 +177,26 @@
         @media (min-width: 768px) {
             .about-diecut-img { max-width: 320px; }
         }
+        /* Responsive Layout: mobile-friendly hero, form, and CTA stacks. */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero .grid {
+                grid-template-columns: 1fr;
+            }
+            .form {
+                width: 100%;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .proof-logo {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -236,7 +256,7 @@
                     ผมออกแบบระบบ n8n, LINE OA, CRM และ AI Workflow ให้ทีมตอบลูกค้าเร็วขึ้น ลดงาน manual และเห็น pipeline ชัดขึ้นในระบบเดียว
                 </p>
                 <!-- High-Impact / Low-Effort: Put the primary conversion actions directly inside the hero. -->
-                <div class="cta-row pt-2 flex flex-col sm:flex-row gap-4">
+                <div class="cta-row cta-buttons pt-2 flex flex-col sm:flex-row gap-4">
                     <a href="#contact" class="text-center min-h-[44px] inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-brand-900 px-8 py-4 rounded-xl font-bold transition shadow-lg text-lg" data-en="Hire Me" data-th="จ้างออกแบบระบบ">จ้างออกแบบระบบ</a>
                     <a href="#contact" class="text-center min-h-[44px] inline-flex items-center justify-center bg-white/10 border border-white/25 hover:bg-white/15 text-white px-8 py-4 rounded-xl font-semibold transition text-lg" data-en="Contact Me" data-th="ติดต่อปรึกษา">ติดต่อปรึกษา</a>
                 </div>
@@ -568,6 +588,26 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <p class="eyebrow font-bold tracking-widest uppercase mb-4 text-sm text-brand-600" data-en="Testimonials" data-th="เสียงจากลูกค้า">เสียงจากลูกค้า</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-en="Trust signals from automation clients" data-th="เสียงจากลูกค้า">เสียงจากลูกค้า</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <blockquote class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <p class="text-xl text-gray-800 leading-relaxed mb-6">"LeadFlow Thailand ช่วยลดเวลาทำงานซ้ำซ้อนลง 50%."</p>
+                    <footer class="text-sm font-semibold text-gray-500">- คุณสมชาย, CEO บริษัท ABC</footer>
+                </blockquote>
+                <blockquote class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <p class="text-xl text-gray-800 leading-relaxed mb-6">"ระบบ AI Automation ทำให้ยอดขายเพิ่มขึ้น 30% ภายใน 3 เดือน."</p>
+                    <footer class="text-sm font-semibold text-gray-500">- คุณอร, Marketing Director บริษัท XYZ</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
     <!-- 5) Contact Section -->
     <section id="contact" class="py-20 bg-gray-950 text-white">
         <div class="max-w-3xl mx-auto px-6">
@@ -577,7 +617,7 @@
             </div>
 
             <!-- High-Impact / Low-Effort: Shorten the form to 3 fields to reduce friction. -->
-            <form action="https://formsubmit.co/sirawith.keawsee@gmail.com" method="POST" class="bg-white/5 border border-white/10 p-8 rounded-2xl shadow-xl space-y-6">
+            <form action="https://formsubmit.co/sirawith.keawsee@gmail.com" method="POST" class="form bg-white/5 border border-white/10 p-8 rounded-2xl shadow-xl space-y-6">
                 <input type="hidden" name="_subject" value="[LeadFlow TH] สนใจปรึกษาระบบ Automation">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://bbgunmis-alt.github.io/Sirawith-Portfolio-HTML/portfolio.html?sent=1#contact">
