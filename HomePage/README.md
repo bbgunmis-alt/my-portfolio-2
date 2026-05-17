@@ -5,7 +5,7 @@ Central landing page linking to all portfolios and projects.
 
 ## 🚀 Quick Links
 - **My Portfolio**: https://bbgunmis-alt.github.io/my-portfolio-2
-- **LeadFlow Thailand**: /LeadFlow
+- **LeadFlow Thailand**: https://bbgunmis-alt.github.io/my-portfolio-2/
 
 ## 📦 Deployment
 - Auto-deploys to GitHub Pages on every push to `main`
