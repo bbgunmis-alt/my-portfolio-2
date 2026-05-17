@@ -4,7 +4,7 @@
 Central landing page linking to all portfolios and projects.
 
 ## 🚀 Quick Links
-- **My Portfolio**: https://bbgunmis-alt.github.io/Sirawith-Portfolio-HTML/
+- **My Portfolio**: https://bbgunmis-alt.github.io/Sirawith-Portfolio-HTML/portfolio.html
 - **LeadFlow Thailand**: https://bbgunmis-alt.github.io/Sirawith-Portfolio-HTML/
 
 ## 📦 Deployment
