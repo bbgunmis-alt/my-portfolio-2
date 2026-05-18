@@ -90,6 +90,36 @@
             border: 1px solid rgba(201, 162, 39, 0.24);
             background: linear-gradient(180deg, #ffffff 0%, #fbfaf6 100%);
         }
+        .case-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .case-card {
+            flex: 1 1 calc(33% - 20px);
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(201, 162, 39, 0.18);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            margin-top: 1.25rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #c9a227;
+            color: #1a1710;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 180ms ease, color 180ms ease;
+        }
+        .btn-secondary:hover {
+            background: #1a1710;
+            color: #f6d365;
+        }
         .icon-mark {
             display: inline-flex;
             align-items: center;
@@ -195,6 +225,9 @@
             .proof-logo {
                 width: 100%;
                 text-align: center;
+            }
+            .case-card {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -604,6 +637,34 @@
                     <p class="text-xl text-gray-800 leading-relaxed mb-6">"ระบบ AI Automation ทำให้ยอดขายเพิ่มขึ้น 30% ภายใน 3 เดือน."</p>
                     <footer class="text-sm font-semibold text-gray-500">- คุณอร, Marketing Director บริษัท XYZ</footer>
                 </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Case Study Section -->
+    <section id="case-studies" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <p class="eyebrow font-bold tracking-widest uppercase mb-4 text-sm text-brand-600" data-en="Blog + Case Studies" data-th="บทความและเคสจริง">บทความและเคสจริง</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Case Studies & Insights</h2>
+                <p class="text-gray-600 text-lg">เรียนรู้จากโครงการจริง และบทความเชิงลึกด้าน AI Automation</p>
+            </div>
+            <div class="case-grid">
+                <article class="case-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">ลดงานซ้ำซ้อน 50% ด้วย Workflow Automation</h3>
+                    <p class="text-gray-600 leading-relaxed">ระบบ Make.com เชื่อม LINE OA และ Google Sheets → ลดเวลาทำงานลงครึ่งหนึ่ง</p>
+                    <a href="case-study-1.html" class="btn-secondary">อ่านเพิ่มเติม</a>
+                </article>
+                <article class="case-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">เพิ่มยอดขาย 30% ภายใน 3 เดือน</h3>
+                    <p class="text-gray-600 leading-relaxed">CRM อัตโนมัติช่วยทีมขายติดตามลูกค้าได้แม่นยำขึ้น</p>
+                    <a href="case-study-2.html" class="btn-secondary">อ่านเพิ่มเติม</a>
+                </article>
+                <article class="case-card">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Automation สำหรับ SME ไทย</h3>
+                    <p class="text-gray-600 leading-relaxed">บทความ SEO-friendly อธิบายการใช้ AI ลดต้นทุนและเพิ่มประสิทธิภาพ</p>
+                    <a href="blog-ai-sme.html" class="btn-secondary">อ่านเพิ่มเติม</a>
+                </article>
             </div>
         </div>
     </section>
